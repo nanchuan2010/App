@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <group android:id="@+id/menuGroup_Main">
+        <item android:id="@+id/menu_item1"
+            android:orderInCategory="1"
+            android:title="item1 text"/>
+        <item android:id="@+id/menu_item2"
+            android:orderInCategory="2"
+            android:enabled="true" 
+            android:icon="@drawable/icon"
+            android:title="item2 text"/>
+        <item android:id="@+id/menu_item3"
+            android:orderInCategory="3"
+            android:title="item3 text"/>
+        <item android:showAsAction="ifRoom" android:id="@+id/menu_search"
+            android:title="Search"
+            android:actionViewClass="android.widget.SearchView"
+            />
+    </group>
+</menu>

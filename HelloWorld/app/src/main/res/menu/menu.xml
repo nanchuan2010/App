@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/menuGroup_Main">
+        <item android:id="@+id/menu_show_prompt_dialog"
+            android:title="Show Prompt Dialog">
+        </item>
+        <item android:id="@+id/menu_show_alert_dialog"
+            android:title="Show Alert Dialog">
+        </item>
+        <item android:id="@+id/menu_help"
+            android:title="Show Help Dialog">
+        </item>
+        <item android:id="@+id/menu_embedded"
+            android:title="Show Embedded Prompt Dialog">
+        </item>
+    </group>
+</menu>

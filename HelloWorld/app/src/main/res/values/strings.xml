@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">MyApp</string>
+    <string name="prefTitle">My Preferences</string>
+    <string name="prefSummary">Set Flight Option Preferences</string>
+    <string name="flight_sort_option_default_value">1</string>
+    <string name="dialogTitle">Choose Flight Options</string>
+    <string name="listSummary">Set Search Options</string>
+    <string name="listTitle">Flight Options</string>
+    <string name="flight_sort_option">flight_sort_option</string>
+    <string name="menu_prefs_title">Settings</string>
+    <item name="app_notification_id" type="id" />
+    <string name="title_activity_login">Sign in</string>
+    <string name="name_text">Name:</string>
+    <string name="addr_text">Address:</string>
+    <string name="spinnerprompt">Please Choose</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="remote_service_connected">Remote Service Connected</string>
+    <string name="remote_service_disconnected">Remote Service Disconnected</string>
+
+    <string name="remote_service_started">Remote Service started</string>
+    <string name="remote_service_stopped">Remote Service stopped</string>
+    <string name="remote_service_label">Remote Service label</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="help_text">
+        \n
+1. You are reading the help text for this test
+program.
+\n
+2. Click the menu icon at top right
+to see a list of available menu items.
+\n
+3. Click a dialog menu item
+to see that dialog.
+\n
+4. In the emulator, you can flip the
+orientation using Ctrl+F11 to see if
+the dialogs work when the device is
+rotated.
+    </string><string name="help1">
+Here is more help text that could be displayed to the user in
+a dialog. When the user clicks the Close button, the previous
+dialog is re-displayed to them.
+</string>
+    <string name="title_activity_test_async_task_driver">TestAsyncTaskDriverActivity</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+</resources>
