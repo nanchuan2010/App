@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<TextView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="Regular progress bar: Spinner"
+    android:layout_marginTop="10dp"
+    />
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spb_progressBar1"
+        android:background="@android:color/background_light"
+        />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Regular progress bar: Spinner"
+        android:layout_marginTop="10dp"
+        />
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyleSmall"
+        android:id="@+id/spb_progressBar2"
+        android:background="@android:color/background_light"
+        />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Regular progress bar: Spinner"
+        android:layout_marginTop="10dp"
+        />
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spb_progressBar3"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:indeterminate="true"
+        />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Regular progress bar: Spinner"
+        android:layout_marginTop="10dp"
+        />
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spb_progressBar4"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:indeterminate="false"
+        android:max="50"
+        android:progress="10"
+        />
+</LinearLayout>
