@@ -87,7 +87,7 @@
         <!-- </intent-filter> -->
         <!-- </activity> -->
         <activity
-            android:name=".ViewAnimationActivity"
+            android:name=".Animation.TestPropertyAnimationActivity"
             android:label="@string/title_activity_test_async_task_driver">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

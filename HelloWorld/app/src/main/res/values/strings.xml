@@ -63,4 +63,7 @@ dialog is re-displayed to them.
     </string>
     <string name="title_activity_test_alarms_driver">TestAlarmsDriverActivity</string>
     <string name="title_activity_frame_animation">FrameAnimationActivity</string>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="blue">#0000FF</color>
 </resources>

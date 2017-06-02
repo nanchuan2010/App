@@ -1,4 +1,4 @@
-package com.example.lzw.myapp;
+package com.example.lzw.myapp.Animation;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+
+import com.example.lzw.myapp.R;
 
 
 public class ViewAnimationActivity extends Activity {
@@ -38,7 +40,13 @@ public class ViewAnimationActivity extends Activity {
     private void animateListView()
     {
         ListView lv=(ListView)this.findViewById(R.id.list_view_id);
-        lv.startAnimation(new ViewAnimation());
+
+        float cx=(float)(lv.getWidth()/2.0);
+        float cy=(float)(lv.getWidth()/2.0);
+
+        ViewAnimation animation=new ViewAnimation(cx,cy);
+        animation.setAnimationListener(new ViewAnimationListener());
+        lv.startAnimation(animation);
     }
 
 }
