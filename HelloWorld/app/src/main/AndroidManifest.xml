@@ -51,6 +51,30 @@
                 <action android:name="com.example.lzw.myapp.IStockQuoteService2" />
             </intent-filter>
         </service>
+        <receiver android:name=".Broadcast.TestReceiver">
+            <intent-filter>
+                <action android:name="com.example.lzw.myapp.testbc" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".Broadcast.TestReceiver2">
+            <intent-filter>
+                <action android:name="com.example.lzw.myapp.testbc" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".Broadcast.NotificationReceiver">
+            <intent-filter>
+                <action android:name="com.example.lzw.myapp.testbc" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".Broadcast.Test60SecBCR">
+            <intent-filter>
+                <action android:name="com.androidbook.intents.testbc" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".AlarmManager.TestReceiver" />
+
+        <service android:name=".Broadcast.Test60SecBCRService" />
+
         <!--
             <activity android:name=".SomeActivity">
             <intent-filter>

@@ -1,4 +1,4 @@
-package com.example.lzw.myapp;
+package com.example.lzw.myapp.AlarmManager;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -6,25 +6,25 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class TestAsyncTaskDriverActivity extends Activity implements IReportBack {
+import com.example.lzw.myapp.IReportBack;
+import com.example.lzw.myapp.R;
 
-    public static final String tag="AsyncTaskDriverActivity";
+public class TestAlarmsDriverActivity extends Activity implements IReportBack{
 
-    private AsyncTester asyncTester=null;
+    public static final String tag="TestAlarmsDriverActivity";
+
+    private CancelRepeatingAlarmTester alarmTester=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_async_task_driver);
-
-        asyncTester=new AsyncTester(this,this);
+        alarmTester=new CancelRepeatingAlarmTester(this,this);
     }
 
-    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
         MenuInflater inflater=getMenuInflater();
@@ -44,20 +44,19 @@ public class TestAsyncTaskDriverActivity extends Activity implements IReportBack
         }
         if(item.getItemId()==R.id.menu_test_async1)
         {
-            asyncTester.test1();
+            alarmTester.sendAlarmOnce();
             return true;
         }
         if(item.getItemId()==R.id.menu_test_async2)
         {
-            asyncTester.test2();
+            alarmTester.sendRepeatingAlarm();
             return true;
         }
         if(item.getItemId()==R.id.menu_test_async3)
         {
-            asyncTester.test3();
+            alarmTester.cancelRepeatingAlarm();
             return true;
         }
-
         return true;
     }
 
@@ -78,7 +77,7 @@ public class TestAsyncTaskDriverActivity extends Activity implements IReportBack
     {
         TextView tv=getTextView();
         tv.setText(tv.getText()+"\n"+s);
-        Log.d(tag,s);
+        //Log.d(tag,s);
     }
 
     @Override

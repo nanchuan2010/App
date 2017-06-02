@@ -1,60 +1,61 @@
 package com.example.lzw.myapp;
 
 import android.os.Bundle;
-import android.app.Activity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class TestAsyncTaskDriverActivity extends Activity implements IReportBack {
+/**
+ * Created by LZW on 2017/05/31.
+ */
+public class TestProgressBarDriverActivity extends MonitoredActivityWithADOSupport implements IReportBack {
+    public static final String tag="TestProgressBarDriverActivity";
+    AsyncTesterRADO asyncTester=null;
 
-    public static final String tag="AsyncTaskDriverActivity";
+    AsyncTesterFragment asyncTesterFragment=null;
 
-    private AsyncTester asyncTester=null;
+    public TestProgressBarDriverActivity()
+    {
+        super(tag);
+    }
+
+    AsyncTesterRADO getAsyncTester()
+    {
+        return (AsyncTesterRADO)getRootRADO();
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test_async_task_driver);
+    protected RetainedADO onCreateRADO() {
+        return new AsyncTesterRADO(this);
+    }
 
-        asyncTester=new AsyncTester(this,this);
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        asyncTester=getAsyncTester();
+        asyncTesterFragment=AsyncTesterFragment.establishRetainedAsyncTesterFragment(this);
+        ProgressBar pb=(ProgressBar)findViewById(R.id.tpb_progressBar1);
+        pb.setSaveEnabled(true);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
         MenuInflater inflater=getMenuInflater();
-        inflater.inflate(R.menu.async_task_menu,menu);
+        inflater.inflate(R.menu.tpb_menu,menu);
         return true;
-
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         appendMenuItemText(item);
-        if(item.getItemId()==R.id.menu_clear)
+        if(item.getItemId()==R.id.tpb_menu_test1)
         {
-            this.emptyText();
-            return true;
-        }
-        if(item.getItemId()==R.id.menu_test_async1)
-        {
-            asyncTester.test1();
-            return true;
-        }
-        if(item.getItemId()==R.id.menu_test_async2)
-        {
-            asyncTester.test2();
-            return true;
-        }
-        if(item.getItemId()==R.id.menu_test_async3)
-        {
-            asyncTester.test3();
+            asyncTesterFragment.testFragmentProgressDialog();
             return true;
         }
 
@@ -78,7 +79,7 @@ public class TestAsyncTaskDriverActivity extends Activity implements IReportBack
     {
         TextView tv=getTextView();
         tv.setText(tv.getText()+"\n"+s);
-        Log.d(tag,s);
+        //Log.d(tag,s);
     }
 
     @Override
@@ -97,7 +98,6 @@ public class TestAsyncTaskDriverActivity extends Activity implements IReportBack
     }
 
     public TextView getTextView() {
-        return (TextView)this.findViewById(R.id.text1);
+        return (TextView)this.findViewById(R.id.tpb_text1);
     }
-
 }

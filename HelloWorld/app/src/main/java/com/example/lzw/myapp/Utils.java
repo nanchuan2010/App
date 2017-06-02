@@ -3,6 +3,8 @@ package com.example.lzw.myapp;
 import android.os.Bundle;
 import android.util.Log;
 
+import java.util.Calendar;
+
 /**
  * Created by LZW on 2016/09/09.
  */
@@ -53,5 +55,12 @@ public class Utils {
     public static String getStringFromABundle(Bundle b)
     {
         return b.getString("message");
+    }
+
+    public static Calendar getTimeAfterInSecs(int secs)
+    {
+        Calendar cal= Calendar.getInstance().getInstance();
+        cal.add(Calendar.SECOND,secs);
+        return cal;
     }
 }

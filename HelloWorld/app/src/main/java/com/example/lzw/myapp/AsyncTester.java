@@ -13,15 +13,25 @@ public class AsyncTester extends BaseTester{
         super(ctx,target);
     }
 
-
-
-    void respondToMenuItem()
+    public void test1()
     {
-        IReportBack reportBackObject=this.mReportTo;
-        Context ctx=this.mContext;
-        String tag="Task1";
-
-        MyLongTask mlt=new MyLongTask(reportBackObject,ctx,tag);
+        MyLongTask mlt=new MyLongTask(this.mReportTo,this.mContext,"Task1");
         mlt.execute("String1","String2","String3");
+    }
+
+    public void test2()
+    {
+        MyLongTask1 mlt=new MyLongTask1(this.mReportTo,this.mContext,"Task1");
+        mlt.execute("String1","String2","String3");
+    }
+
+
+    public void test3()
+    {
+        MyLongTask mlt=new MyLongTask(this.mReportTo,this.mContext,"Task1");
+        mlt.execute("String1","String2","String3");
+
+        MyLongTask mlt1=new MyLongTask(this.mReportTo,this.mContext,"Task2");
+        mlt1.execute("String1","String2","String3");
     }
 }
