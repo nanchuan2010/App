@@ -60,6 +60,7 @@ public class GeocoderActivity extends FragmentActivity {
                     try
                     {
                         List<Address> addressList=geocoder.getFromLocationName(locationName,5);
+
                         if(addressList!=null && addressList.size()>0)
                         {
                             myMapFragment.gotoLocation(new LatLng(addressList.get(0).getLatitude(),addressList.get(0).getLongitude()),locationName);

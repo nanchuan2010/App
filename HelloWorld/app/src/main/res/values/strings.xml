@@ -68,4 +68,5 @@ dialog is re-displayed to them.
     <color name="blue">#0000FF</color>
     <string name="title_activity_where_am_i">WhereAmIActivity</string>
     <string name="title_activity_geocoder">GeocoderActivity</string>
+    <string name="title_activity_location_service">LocationServiceActivity</string>
 </resources>
