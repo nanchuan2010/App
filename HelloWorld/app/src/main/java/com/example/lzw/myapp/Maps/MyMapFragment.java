@@ -4,7 +4,6 @@ package com.example.lzw.myapp.Maps;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 
 import com.google.android.gms.maps.GoogleMap;
@@ -15,11 +14,11 @@ import com.google.android.gms.maps.SupportMapFragment;
  * Created by Administrator on 2017/6/3.
  */
 
-public class MyMapFragment extends SupportMapFragment implements OnMapReadyCallback {
-    private GoogleMap mMap = null;
+public class MyMapFragment extends SupportMapFragment implements OnMapReadyCallback{
+    private GoogleMap mMap=null;
 
-    public static MyMapFragment newInstance() {
-        MyMapFragment myMF = new MyMapFragment();
+    public static MyMapFragment newInstance(){
+        MyMapFragment myMF=new MyMapFragment();
         return myMF;
     }
 
@@ -63,7 +62,7 @@ public class MyMapFragment extends SupportMapFragment implements OnMapReadyCallb
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
+        mMap=googleMap;
         doWhenMapIsReady();
     }
 
@@ -83,10 +82,5 @@ public class MyMapFragment extends SupportMapFragment implements OnMapReadyCallb
             }
             mMap.setMyLocationEnabled(true);
         }
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 }

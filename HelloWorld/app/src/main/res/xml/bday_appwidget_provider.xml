@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="150dp" android:minHeight="120dp"
+    android:updatePeriodMillis="43200000"
+    android:initialLayout="@layout/bday_widget"
+    android:configure="com.example.lzw.myapp.HomeScreenWidget.ConfigureBDayWidgetActivity"
+    android:resizeMode="horizontal|vertical"
+    android:previewImage="@drawable/some_preview_image_icon">
+
+</appwidget-provider>

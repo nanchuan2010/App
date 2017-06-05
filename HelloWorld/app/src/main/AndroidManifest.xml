@@ -82,7 +82,13 @@
         <receiver android:name=".AlarmManager.TestReceiver" />
 
         <service android:name=".Broadcast.Test60SecBCRService" />
-
+        <receiver android:name=".BDayWidgetProvider">
+            <meta-data android:name="android.appwidget.provider"
+                android:resource="@xml/bday_appwidget_provider" />
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+        </receiver>
         <!--
             <activity android:name=".SomeActivity">
             <intent-filter>
@@ -95,7 +101,7 @@
         <!-- </intent-filter> -->
         <!-- </activity> -->
         <activity
-            android:name=".Maps.LocationUpdateDemoActivity"
+            android:name=".Media.AudioPlayActivity"
             android:label="@string/title_activity_test_async_task_driver">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -124,6 +130,17 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
         -->
+        <!--
+            <activity
+            android:name=".Media.AudioPlayActivity"
+            android:label="@string/title_activity_audio_play"></activity>
+        -->
+        <activity
+            android:name=".Media.SoundPoolActivity"
+            android:label="@string/title_activity_sound_pool" />
+        <activity
+            android:name=".Media.VideoPlayActivity"
+            android:label="@string/title_activity_video_play"></activity>
     </application>
 
 </manifest>

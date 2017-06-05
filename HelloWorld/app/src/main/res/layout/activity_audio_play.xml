@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.lzw.myapp.Media.AudioPlayActivity">
+    <Button
+        android:id="@+id/startPlayerBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start Playing Audio"
+        android:onClick="doClick"/>
+    <Button
+        android:id="@+id/pausePlayerBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pause Player"
+        android:layout_below="@+id/startPlayerBtn"
+        android:onClick="doClick"/>
+    <Button
+        android:id="@+id/restartPlayerBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Restart Player"
+        android:layout_below="@+id/pausePlayerBtn"
+        android:onClick="doClick"/>
+    <Button
+        android:id="@+id/stopPlayerBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Stop Player"
+        android:layout_below="@+id/restartPlayerBtn"
+        android:onClick="doClick"/>
+</RelativeLayout>
