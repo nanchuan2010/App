@@ -3,7 +3,11 @@ package com.example.lzw.myapp;
 import android.os.Bundle;
 import android.util.Log;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Created by LZW on 2016/09/09.
@@ -62,5 +66,53 @@ public class Utils {
         Calendar cal= Calendar.getInstance().getInstance();
         cal.add(Calendar.SECOND,secs);
         return cal;
+    }
+
+    public static Date getDate(String dateString) throws ParseException
+    {
+        DateFormat format=getDateFormat();
+        Date date=format.parse(dateString);
+        return date;
+    }
+
+    public static DateFormat getDateFormat()
+    {
+        SimpleDateFormat format=new SimpleDateFormat("MM/dd/yyyy");
+        format.setLenient(false);
+        return format;
+    }
+
+    public static boolean validateDate(String dateString)
+    {
+        try{
+            SimpleDateFormat format=new SimpleDateFormat("MM/dd/yyyy");
+            format.setLenient(false);
+            Date date=format.parse(dateString);
+            return true;
+        }
+        catch (ParseException x)
+        {
+            return false;
+        }
+    }
+
+    public static long howfarInDaysThisYear(Date date)
+    {
+        Calendar bdayCal=Calendar.getInstance();
+        bdayCal.setTime(date);
+
+        int bday=bdayCal.get(Calendar.DAY_OF_MONTH);
+        int bmonth=bdayCal.get(Calendar.MONTH);
+
+        Calendar todayCalendar=Calendar.getInstance();
+        Calendar bdaycalThisYear=Calendar.getInstance();
+        bdaycalThisYear.set(Calendar.DAY_OF_MONTH,bday);
+        bdaycalThisYear.set(Calendar.MONTH,bmonth);
+        bdaycalThisYear.set(Calendar.YEAR,todayCalendar.get(Calendar.YEAR));
+
+        long today_ms=todayCalendar.getTimeInMillis();
+        long bday_ms=bdaycalThisYear.getTimeInMillis();
+
+        return (bday_ms-today_ms)/(1000*60*60*24);
     }
 }

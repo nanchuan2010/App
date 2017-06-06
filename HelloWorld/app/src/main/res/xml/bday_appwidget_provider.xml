@@ -5,6 +5,6 @@
     android:initialLayout="@layout/bday_widget"
     android:configure="com.example.lzw.myapp.HomeScreenWidget.ConfigureBDayWidgetActivity"
     android:resizeMode="horizontal|vertical"
-    android:previewImage="@drawable/some_preview_image_icon">
+    android:previewImage="@drawable/robot">
 
 </appwidget-provider>

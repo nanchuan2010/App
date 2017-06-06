@@ -58,7 +58,7 @@ public class BDayWidgetModel extends APrefWidgetModel {
     {
         try
         {
-            return Utils.howfarInDaysThisYears(Utils.getDage(this.bday));
+            return Utils.howfarInDaysThisYear(Utils.getDate(this.bday));
         }
         catch (ParseException x)
         {

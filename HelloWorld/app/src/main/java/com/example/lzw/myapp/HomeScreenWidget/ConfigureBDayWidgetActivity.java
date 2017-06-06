@@ -12,8 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RemoteViews;
 
+import com.example.lzw.myapp.R;
 import com.example.lzw.myapp.Utils;
-
 
 public class ConfigureBDayWidgetActivity extends Activity {
 
