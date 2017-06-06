@@ -82,13 +82,24 @@
         <receiver android:name=".AlarmManager.TestReceiver" />
 
         <service android:name=".Broadcast.Test60SecBCRService" />
-        <receiver android:name=".BDayWidgetProvider">
-            <meta-data android:name="android.appwidget.provider"
+
+        <receiver android:name=".BDayAppWidgetProvider">
+            <meta-data
+                android:name="android.appwidget.provider"
                 android:resource="@xml/bday_appwidget_provider" />
+
             <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
         </receiver>
+
+        <activity
+            android:name=".ConfigureBDayWidgetActivity"
+            android:label="Configure Birthday Widget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
         <!--
             <activity android:name=".SomeActivity">
             <intent-filter>
@@ -140,7 +151,10 @@
             android:label="@string/title_activity_sound_pool" />
         <activity
             android:name=".Media.VideoPlayActivity"
-            android:label="@string/title_activity_video_play"></activity>
+            android:label="@string/title_activity_video_play" />
+        <activity
+            android:name=".HomeScreenWidget.ConfigureBDayWidgetActivity"
+            android:label="@string/title_activity_configure_bday_widget"></activity>
     </application>
 
 </manifest>

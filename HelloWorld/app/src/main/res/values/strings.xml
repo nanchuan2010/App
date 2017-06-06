@@ -72,4 +72,5 @@ dialog is re-displayed to them.
     <string name="title_activity_audio_play">AudioPlayActivity</string>
     <string name="title_activity_sound_pool">SoundPoolActivity</string>
     <string name="title_activity_video_play">VideoPlayActivity</string>
+    <string name="title_activity_configure_bday_widget">ConfigureBDayWidgetActivity</string>
 </resources>
