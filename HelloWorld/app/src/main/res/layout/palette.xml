@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dot="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <com.example.lzw.myapp.DragAndDrop.DragDot
+        android:id="@+id/dot1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="30dp"
+        android:tag="Blue dot"
+        dot:color="#ff1111ff"
+        dot:radius="20dp"
+        />
+    <com.example.lzw.myapp.DragAndDrop.DragDot
+        android:id="@+id/dot2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:tag="White dot"
+        dot:color="#ffffffff"
+        dot:radius="40dp"
+        />
+</LinearLayout>

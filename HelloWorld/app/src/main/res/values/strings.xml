@@ -76,4 +76,6 @@ dialog is re-displayed to them.
     <string name="title_activity_boolean_button">BooleanButtonActivity</string>
     <string name="title_activity_multi_touch">MultiTouchActivity</string>
     <string name="title_activity_scale_gesture">ScaleGestureActivity</string>
+    <string name="title_activity_sensor_list">SensorListActivity</string>
+    <string name="title_activity_light_sensor">LightSensorActivity</string>
 </resources>
