@@ -13,6 +13,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <uses-configuration android:reqTouchScreen="finger" />
 
     <uses-feature
@@ -113,7 +114,7 @@
         <!-- </intent-filter> -->
         <!-- </activity> -->
         <activity
-            android:name=".TouchScreen.VelocityTrackerActivity"
+            android:name=".DragAndDrop.TouchDragActivity"
             android:label="@string/title_activity_test_async_task_driver">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -158,9 +159,19 @@
             android:name=".HomeScreenWidget.ConfigureBDayWidgetActivity"
             android:label="@string/title_activity_configure_bday_widget"></activity>
         -->
-<!--        <activity
+        <!--
+            <activity
             android:name=".TouchScreen.BooleanButtonActivity"
-            android:label="@string/title_activity_boolean_button"></activity>-->
+            android:label="@string/title_activity_boolean_button"></activity>
+        -->
+        <!--
+            <activity
+            android:name=".TouchScreen.MultiTouchActivity"
+            android:label="@string/title_activity_multi_touch"></activity>
+        -->
+<!--        <activity
+            android:name=".TouchScreen.ScaleGestureActivity"
+            android:label="@string/title_activity_scale_gesture"></activity>-->
     </application>
 
 </manifest>
