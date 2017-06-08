@@ -77,7 +77,7 @@ public class DatabaseContext {
         getCurrentDatabaseContext().internalBeginTransaction();
     }
 
-    public static void setTransaction()
+    public static void setTransactionSuccessful()
     {
         getCurrentDatabaseContext().internalSetTransactionSuccessful();
     }
