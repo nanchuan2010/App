@@ -78,4 +78,5 @@ dialog is re-displayed to them.
     <string name="title_activity_scale_gesture">ScaleGestureActivity</string>
     <string name="title_activity_sensor_list">SensorListActivity</string>
     <string name="title_activity_light_sensor">LightSensorActivity</string>
+    <string name="title_activity_gravity_sensor">GravitySensorActivity</string>
 </resources>

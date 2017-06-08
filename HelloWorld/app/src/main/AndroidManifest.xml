@@ -114,7 +114,7 @@
         <!-- </intent-filter> -->
         <!-- </activity> -->
         <activity
-            android:name=".Sensor.LightSensorActivity"
+            android:name=".Sensor.GravitySensorActivity"
             android:label="@string/title_activity_test_async_task_driver">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -179,9 +179,14 @@
             android:name=".Sensor.SensorListActivity"
             android:label="@string/title_activity_sensor_list"></activity>
         -->
-<!--        <activity
+        <!--
+            <activity
             android:name=".Sensor.LightSensorActivity"
-            android:label="@string/title_activity_light_sensor"></activity>-->
+            android:label="@string/title_activity_light_sensor"></activity>
+        -->
+<!--        <activity
+            android:name=".Sensor.GravitySensorActivity"
+            android:label="@string/title_activity_gravity_sensor"></activity>-->
     </application>
 
 </manifest>
