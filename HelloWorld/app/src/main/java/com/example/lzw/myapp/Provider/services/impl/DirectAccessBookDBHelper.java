@@ -1,4 +1,4 @@
-package com.example.lzw.myapp.Provide.services.impl;
+package com.example.lzw.myapp.Provider.services.impl;
 
 import android.content.Context;
 import android.content.res.AssetManager;
@@ -7,9 +7,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import com.example.lzw.myapp.MyApplication;
-import com.example.lzw.myapp.Provide.services.DatabaseContext;
-import com.example.lzw.myapp.Provide.services.ReadDatabaseContext;
-import com.example.lzw.myapp.Provide.services.WriteDatabaseContext;
+import com.example.lzw.myapp.Provider.services.DatabaseContext;
+import com.example.lzw.myapp.Provider.services.ReadDatabaseContext;
+import com.example.lzw.myapp.Provider.services.WriteDatabaseContext;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -24,7 +24,7 @@ import java.util.List;
 public class DirectAccessBookDBHelper extends SQLiteOpenHelper implements DatabaseContext.IFactory {
     public static DirectAccessBookDBHelper m_self=new DirectAccessBookDBHelper(MyApplication.m_appContext);
 
-    private static final String DATABASE_NAME="bookSQLite.db";
+    private static final String DATABASE_NAME="booksqllite.db";
     private static final String CREATE_DATABASE_FILENAME="create-book-db.sql";
 
     public static final int DATABASE_VERSION=1;
@@ -34,6 +34,7 @@ public class DirectAccessBookDBHelper extends SQLiteOpenHelper implements Databa
     DirectAccessBookDBHelper(Context context)
     {
         super(context,DATABASE_NAME,null,DATABASE_VERSION);
+        DatabaseContext.initialize(this);
     }
 
     @Override

@@ -1,8 +1,8 @@
-package com.example.lzw.myapp.Provide;
+package com.example.lzw.myapp.Provider;
 
 import android.view.View;
 
-import com.example.lzw.myapp.Provide.directaccess.DirectSQLitePersistenceTestActivity;
+import com.example.lzw.myapp.Provider.directaccess.DirectSQLitePersistenceTestActivity;
 import com.example.lzw.myapp.R;
 
 /**

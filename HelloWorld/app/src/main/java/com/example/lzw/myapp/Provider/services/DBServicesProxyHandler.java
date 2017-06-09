@@ -1,12 +1,10 @@
-package com.example.lzw.myapp.Provide.services;
+package com.example.lzw.myapp.Provider.services;
 
-import android.animation.ObjectAnimator;
 import android.util.Log;
 
-import com.example.lzw.myapp.Provide.services.impl.BookPSSQLite;
+import com.example.lzw.myapp.Provider.services.impl.BookPSSQLite;
 
 import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**

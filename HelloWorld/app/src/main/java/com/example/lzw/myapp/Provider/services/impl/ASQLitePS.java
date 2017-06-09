@@ -1,9 +1,8 @@
-package com.example.lzw.myapp.Provide.services.impl;
+package com.example.lzw.myapp.Provider.services.impl;
 
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.lzw.myapp.Provide.services.Book;
-import com.example.lzw.myapp.Provide.services.DatabaseContext;
+import com.example.lzw.myapp.Provider.services.DatabaseContext;
 
 /**
  * Created by LZW on 2017/06/08.

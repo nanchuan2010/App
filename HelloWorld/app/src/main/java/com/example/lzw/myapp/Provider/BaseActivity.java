@@ -1,4 +1,4 @@
-package com.example.lzw.myapp.Provide;
+package com.example.lzw.myapp.Provider;
 
 import android.app.Activity;
 import android.content.Intent;

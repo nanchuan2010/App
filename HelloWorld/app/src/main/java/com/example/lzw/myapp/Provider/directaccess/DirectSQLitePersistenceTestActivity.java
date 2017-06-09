@@ -1,10 +1,10 @@
-package com.example.lzw.myapp.Provide.directaccess;
+package com.example.lzw.myapp.Provider.directaccess;
 
 import android.util.Log;
 import android.view.MenuItem;
 
 import com.example.lzw.myapp.IReportBack;
-import com.example.lzw.myapp.Provide.MonitoredDebugActivity;
+import com.example.lzw.myapp.Provider.MonitoredDebugActivity;
 import com.example.lzw.myapp.R;
 
 /**

@@ -1,8 +1,8 @@
-package com.example.lzw.myapp.Provide.services;
+package com.example.lzw.myapp.Provider.services;
 
 import android.util.Log;
 
-import com.example.lzw.myapp.Provide.services.impl.Database;
+import com.example.lzw.myapp.Provider.services.impl.Database;
 
 import java.lang.reflect.Proxy;
 

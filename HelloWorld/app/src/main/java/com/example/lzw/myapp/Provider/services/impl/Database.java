@@ -1,8 +1,8 @@
-package com.example.lzw.myapp.Provide.services.impl;
+package com.example.lzw.myapp.Provider.services.impl;
 
 import android.util.Log;
 
-import com.example.lzw.myapp.Provide.services.DatabaseContext;
+import com.example.lzw.myapp.Provider.services.DatabaseContext;
 
 /**
  * Created by Administrator on 2017/6/9.

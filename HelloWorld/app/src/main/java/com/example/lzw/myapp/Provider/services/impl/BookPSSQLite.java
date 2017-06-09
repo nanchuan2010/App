@@ -1,4 +1,4 @@
-package com.example.lzw.myapp.Provide.services.impl;
+package com.example.lzw.myapp.Provider.services.impl;
 
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -6,8 +6,8 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-import com.example.lzw.myapp.Provide.services.Book;
-import com.example.lzw.myapp.Provide.services.IBookPS;
+import com.example.lzw.myapp.Provider.services.Book;
+import com.example.lzw.myapp.Provider.services.IBookPS;
 
 import java.util.ArrayList;
 import java.util.List;

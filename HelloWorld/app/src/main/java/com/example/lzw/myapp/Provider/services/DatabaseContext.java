@@ -1,4 +1,4 @@
-package com.example.lzw.myapp.Provide.services;
+package com.example.lzw.myapp.Provider.services;
 
 import android.database.sqlite.SQLiteDatabase;
 

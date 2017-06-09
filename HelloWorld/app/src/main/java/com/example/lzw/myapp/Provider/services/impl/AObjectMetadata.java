@@ -1,8 +1,4 @@
-package com.example.lzw.myapp.Provide.services.impl;
-
-import android.database.Cursor;
-
-import com.example.lzw.myapp.Provide.services.Book;
+package com.example.lzw.myapp.Provider.services.impl;
 
 import java.util.ArrayList;
 import java.util.List;

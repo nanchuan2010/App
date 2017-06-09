@@ -1,10 +1,10 @@
-package com.example.lzw.myapp.Provide.services.impl;
+package com.example.lzw.myapp.Provider.services.impl;
 
 import android.content.ContentValues;
 import android.database.Cursor;
 
-import com.example.lzw.myapp.Provide.services.BaseEntity;
-import com.example.lzw.myapp.Provide.services.Book;
+import com.example.lzw.myapp.Provider.services.BaseEntity;
+import com.example.lzw.myapp.Provider.services.Book;
 
 import java.util.List;
 

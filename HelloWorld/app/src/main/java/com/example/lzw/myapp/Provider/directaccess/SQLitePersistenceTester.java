@@ -1,12 +1,12 @@
-package com.example.lzw.myapp.Provide.directaccess;
+package com.example.lzw.myapp.Provider.directaccess;
 
 import android.content.Context;
 
 import com.example.lzw.myapp.IReportBack;
-import com.example.lzw.myapp.Provide.BaseTester;
-import com.example.lzw.myapp.Provide.services.Book;
-import com.example.lzw.myapp.Provide.services.IBookPS;
-import com.example.lzw.myapp.Provide.services.Services;
+import com.example.lzw.myapp.Provider.BaseTester;
+import com.example.lzw.myapp.Provider.services.Book;
+import com.example.lzw.myapp.Provider.services.IBookPS;
+import com.example.lzw.myapp.Provider.services.Services;
 
 import java.util.List;
 
