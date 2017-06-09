@@ -47,7 +47,32 @@ public class BookPSSQLite extends ASQLitePS implements IBookPS{
 
     @Override
     public Book getBook(int bookid) {
-        return null;
+        SQLiteDatabase db=getReadDb();
+        String tname=BookSQLiteMetaData.TABLE_NAME;
+        String[] colnames=BookSQLiteMetaData.s_self.getColumnNames();
+
+        String selection=String.format("%s=%s",BookSQLiteMetaData.ID_COLNAME,bookid);
+        String[] selectionArgs=null;
+        String groupBy=null;
+        String having=null;
+        String orderby=null;
+        String limitClause=null;
+
+        Cursor c=db.query(tname,colnames,selection,selectionArgs,groupBy,having,orderby,limitClause);
+
+        try {
+            if(c.isAfterLast())
+            {
+                Log.d(tag,"No rows for id"+ bookid);
+                return null;
+            }
+
+            Book b=new Book();
+            BookSQLiteMetaData.s_self.fillFields(c,b);
+            return b;
+        } finally {
+            c.close();
+        }
     }
 
     @Override

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Show Books"  android:id="@+id/menu_show_books"/>
+    <item android:title="Add Book" android:id="@+id/menu_add_book"/>
+    <item android:title="Remove Book" android:id="@+id/menu_delete_book"/>
+    <item android:title="clear" android:id="@+id/menu_da_clear"/>
+</menu>
