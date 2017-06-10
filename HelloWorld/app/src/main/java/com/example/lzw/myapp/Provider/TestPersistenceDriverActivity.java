@@ -17,6 +17,11 @@ public class TestPersistenceDriverActivity extends BaseActivity {
         super(R.layout.antivity_persistence_driver,-1,tag);
     }
 
+    public void startTestContentProviderActivity(View btn1)
+    {
+        gotoActivity(ContentProviderTestActivity.class);
+    }
+
     public void startTestDirectSQLiteStorageActivity(View btn1)
     {
         gotoActivity(DirectSQLitePersistenceTestActivity.class);

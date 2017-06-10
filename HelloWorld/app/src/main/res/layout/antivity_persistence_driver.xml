@@ -14,7 +14,8 @@
         android:id="@+id/tpda_test_content_provider_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Test Content Provider" />
+        android:text="Test Content Provider"
+        android:onClick="startTestContentProviderActivity"/>
 
     <Button
         android:id="@+id/tpda_test_direct_storage_button"

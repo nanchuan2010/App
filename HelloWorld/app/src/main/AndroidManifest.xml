@@ -188,7 +188,8 @@
 <!--        <activity
             android:name=".Sensor.GravitySensorActivity"
             android:label="@string/title_activity_gravity_sensor"></activity>-->
-
+        <activity android:name=".Provider.ContentProviderTestActivity"
+            android:label="ContentProviderTestActivity" />
                 <activity
             android:name=".Provider.directaccess.DirectSQLitePersistenceTestActivity"
             android:label="@string/title_activity_gravity_sensor"></activity>
