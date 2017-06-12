@@ -115,7 +115,7 @@
         <!-- </intent-filter> -->
         <!-- </activity> -->
         <activity
-            android:name=".Provider.TestPersistenceDriverActivity"
+            android:name=".Contacts.TestContactsDriverActivity"
             android:label="@string/title_activity_test_async_task_driver">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -185,17 +185,29 @@
             android:name=".Sensor.LightSensorActivity"
             android:label="@string/title_activity_light_sensor"></activity>
         -->
-<!--        <activity
+        <!--
+            <activity
             android:name=".Sensor.GravitySensorActivity"
-            android:label="@string/title_activity_gravity_sensor"></activity>-->
-        <activity android:name=".Provider.ContentProviderTestActivity"
-            android:label="ContentProviderTestActivity" />
-                <activity
-            android:name=".Provider.directaccess.DirectSQLitePersistenceTestActivity"
             android:label="@string/title_activity_gravity_sensor"></activity>
+        -->
+        <activity
+            android:name=".Provider.ContentProviderTestActivity"
+            android:label="ContentProviderTestActivity" />
+        <activity
+            android:name=".Provider.directaccess.DirectSQLitePersistenceTestActivity"
+            android:label="@string/title_activity_gravity_sensor" />
+
         <provider
-            android:authorities="com.example.lzw.myapp.Provider.BookProvider"
-            android:name=".Provider.BookProvider"/>
+            android:name=".Provider.BookProvider"
+            android:authorities="com.example.lzw.myapp.Provider.BookProvider" />
+        <!--
+        <activity
+            android:name=".Loader.TestLoadersActivity"
+            android:label="@string/title_activity_test_loaders"></activity>
+        -->
+<!--        <activity
+            android:name=".Contacts.TestContactsDriverActivity"
+            android:label="@string/title_activity_test_contacts_driver"></activity>-->
     </application>
 
 </manifest>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp">
+
+    <TextView
+        android:id="@+id/tla_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/box2"
+        android:layout_marginTop="4dp"
+        android:padding="8dp"
+        android:text="@string/tla_header" />
+    <TextView
+        android:id="@+id/tla_listview_heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"
+        android:layout_marginTop="4dp"
+        android:padding="8dp"
+        android:textColor="@color/black"
+        style="@android:style/TextAppearance.Medium"
+        android:text="List of Contacts" />
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/box2"
+        android:drawSelectorOnTop="false" />
+
+    <ProgressBar
+        android:id="@+id/tla_pbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminate="true"/>
+
+    <TextView
+        android:id="@android:id/empty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:padding="8dp"
+        android:text="No Contacts to Match the Criteria"/>
+    <TextView
+        android:id="@+id/tla_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/box2"
+        android:padding="8dp"
+        android:text="@string/tla_footer"/>
+</LinearLayout>
+

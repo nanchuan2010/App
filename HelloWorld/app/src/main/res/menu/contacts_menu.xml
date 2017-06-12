@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/menuGroup_Main" >
+        <item android:title="Clear" android:id="@+id/menu_da_clear" />
+        <item android:title="Accounts" android:id="@+id/menu_show_accounts" />
+        <item android:id="@+id/menu_show_contact_cursor" android:title="Contacts Cursor" />
+        <item android:id="@+id/menu_show_contacts" android:title="Contacts" />
+        <item android:title="Single Contact Cursor" android:id="@+id/menu_show_single_contact_cursor"/>
+        <item android:title="raw contacts cursor" android:id="@+id/menu_show_rc_cursor" />
+        <item android:title="all raw contacts" android:id="@+id/menu_show_rc_all" />
+    </group>
+</menu>

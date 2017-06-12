@@ -1,5 +1,6 @@
 package com.example.lzw.myapp;
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -114,5 +115,22 @@ public class Utils {
         long bday_ms=bdaycalThisYear.getTimeInMillis();
 
         return (bday_ms-today_ms)/(1000*60*60*24);
+    }
+
+    public static String getColumnValue(Cursor cc,String cname)
+    {
+        int i=cc.getColumnIndex(cname);
+        return cc.getString(i);
+    }
+
+    public static String getCursorColumnNames(Cursor c)
+    {
+        int count=c.getColumnCount();
+        StringBuffer cnamesBuffer=new StringBuffer();
+        for (int i = 0; i < count; i++) {
+            String cname=c.getColumnName(i);
+            cnamesBuffer.append(cname).append(';');
+        }
+        return cnamesBuffer.toString();
     }
 }
