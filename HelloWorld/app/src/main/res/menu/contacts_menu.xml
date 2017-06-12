@@ -9,5 +9,9 @@
         <item android:title="Single Contact Cursor" android:id="@+id/menu_show_single_contact_cursor"/>
         <item android:title="raw contacts cursor" android:id="@+id/menu_show_rc_cursor" />
         <item android:title="all raw contacts" android:id="@+id/menu_show_rc_all" />
+        <item android:title="raw contacts" android:id="@+id/menu_show_rc" />
+        <item android:title="contact entity cursor" android:id="@+id/menu_show_rce_cursor" />
+        <item android:title="contact data" android:id="@+id/menu_show_rce_data" />
+        <item android:title="Add Contact" android:id="@+id/menu_add_contact" />
     </group>
 </menu>

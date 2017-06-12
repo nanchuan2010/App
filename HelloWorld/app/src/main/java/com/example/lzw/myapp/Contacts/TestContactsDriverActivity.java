@@ -15,12 +15,16 @@ public class TestContactsDriverActivity extends DebugActivity implements IReport
     AccountsFunctionTester accountsFunctionTester=null;
     AggregatedContactFunctionTester aggregatedContactFunctionTester=null;
     RawContactFunctionTester rawContactFunctionTester=null;
+    ContactDataFunctionTester contactDataFunctionTester=null;
+    AddContactFunctionTester addContactFunctionTester=null;
 
     public TestContactsDriverActivity() {
         super(R.menu.contacts_menu, tag);
         accountsFunctionTester=new AccountsFunctionTester(this,this);
         aggregatedContactFunctionTester=new AggregatedContactFunctionTester(this,this);
         rawContactFunctionTester=new RawContactFunctionTester(this,this);
+        contactDataFunctionTester=new ContactDataFunctionTester(this,this);
+        addContactFunctionTester=new AddContactFunctionTester(this,this);
     }
 
     @Override
@@ -54,6 +58,26 @@ public class TestContactsDriverActivity extends DebugActivity implements IReport
         if(item.getItemId()==R.id.menu_show_rc_all)
         {
             rawContactFunctionTester.showAllRawContacts();
+            return true;
+        }
+        if(item.getItemId()==R.id.menu_show_rc)
+        {
+            rawContactFunctionTester.showRawContactsForFirstAggregatedContact();
+            return true;
+        }
+        if(item.getItemId()==R.id.menu_show_rce_cursor)
+        {
+            contactDataFunctionTester.showRawContactsEntityCursor();
+            return true;
+        }
+        if(item.getItemId()==R.id.menu_show_rce_data)
+        {
+            contactDataFunctionTester.showRawContactsData();
+            return true;
+        }
+        if(item.getItemId()==R.id.menu_add_contact)
+        {
+            addContactFunctionTester.addContact();
             return true;
         }
 

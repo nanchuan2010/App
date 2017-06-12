@@ -55,4 +55,23 @@ public class RawContactFunctionTester extends AggregatedContactFunctionTester{
     public Uri getRawContactsUri() {
         return ContactsContract.RawContacts.CONTENT_URI;
     }
+
+    public void showRawContactsForFirstAggregatedContact()
+    {
+        AggregatedContact ac=getFirstContact();
+        Cursor cursor=null;
+        try {
+            cursor=this.getACursor(getRawContactsUri(),getClause(ac.id));
+            this.printRawContacts(cursor);
+        } finally {
+            if(cursor!=null)
+                cursor.close();
+        }
+    }
+
+    private String getClause(String contactId) {
+        return "contact_id="+contactId;
+    }
+
+
 }
