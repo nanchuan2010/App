@@ -4,6 +4,8 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 
+import com.example.lzw.myapp.Utils.Utils;
+
 /**
  * Created by LZW on 2016/09/09.
  */

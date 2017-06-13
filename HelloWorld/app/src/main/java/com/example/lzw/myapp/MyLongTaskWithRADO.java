@@ -4,10 +4,9 @@ import android.app.Activity;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.os.AsyncTask;
-import android.support.annotation.Dimension;
 import android.util.Log;
 
-import com.koushikdutta.async.Util;
+import com.example.lzw.myapp.Utils.Utils;
 
 /**
  * Created by LZW on 2017/05/31.

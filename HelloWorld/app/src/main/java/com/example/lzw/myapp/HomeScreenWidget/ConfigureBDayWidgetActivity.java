@@ -13,7 +13,7 @@ import android.widget.EditText;
 import android.widget.RemoteViews;
 
 import com.example.lzw.myapp.R;
-import com.example.lzw.myapp.Utils;
+import com.example.lzw.myapp.Utils.Utils;
 
 public class ConfigureBDayWidgetActivity extends Activity {
 

@@ -15,13 +15,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Operand 1 ,(And Result)"
-        android:id="@+id/textView"
         />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText"
+        android:id="@+id/editText1"
         android:inputType="numberDecimal"
         android:text="0" />
 
@@ -29,14 +28,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Operand 2"
-        android:id="@+id/textView2"
         android:layout_marginTop="10dp" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editText2"
-        android:layout_gravity="center_horizontal"
         android:inputType="numberDecimal"
         android:text="0" />
 
@@ -44,7 +41,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Operand1=Operand1 Operator Operand2"
-        android:id="@+id/textView3"
         android:layout_marginTop="10dp" />
 
     <LinearLayout
@@ -59,7 +55,7 @@
             android:layout_height="wrap_content"
             android:text="+"
             android:id="@+id/plusButton"
-            android:layout_weight="0.17" />
+            android:layout_weight="1" />
 
         <Button
             android:layout_width="wrap_content"
@@ -73,14 +69,14 @@
             android:layout_height="wrap_content"
             android:text="*"
             android:id="@+id/multiplyButton"
-            android:layout_weight="0.17" />
+            android:layout_weight="1" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="/"
             android:id="@+id/divideButton"
-            android:layout_weight="0.17" />
+            android:layout_weight="1" />
 
     </LinearLayout>
     <LinearLayout
@@ -113,4 +109,21 @@
             android:id="@+id/map"
             android:layout_weight="0.17"/>
     </LinearLayout>
+
+    <EditText
+        android:id="@+id/edit_uri"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="查看页面网址" />
+
+    <EditText
+        android:id="@+id/edit_geo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="搜索页面网址" />
+    <EditText
+        android:id="@+id/edit_call"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="拨打号码" />
 </LinearLayout>

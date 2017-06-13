@@ -1,4 +1,4 @@
-package com.example.lzw.myapp;
+package com.example.lzw.myapp.Architecture;
 
 import android.app.Activity;
 import android.content.ContentUris;
@@ -64,12 +64,12 @@ public class SomeActivity extends Activity {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        parseResult(this,requestCode,resultCode,data);
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        super.onActivityResult(requestCode, resultCode, intent);
+        parseResult(this,requestCode,resultCode,intent);
     }
 
-    public  void parseResult(Activity activity,int requestCode,int resultCode,Intent data)
+    public  void parseResult(Activity activity,int requestCode,int resultCode,Intent intent)
     {
         if(requestCode!=1)
         {
@@ -83,15 +83,14 @@ public class SomeActivity extends Activity {
         }
 
         Log.d("Test","Result code is OK:"+resultCode);
-        Uri selectedUri=data.getData();
+        Uri selectedUri=intent.getData();
         Log.d("Test","The output uri:"+selectedUri.toString());
 
-        data.setAction(Intent.ACTION_VIEW);
-        startActivity(data);
+        intent.setAction(Intent.ACTION_VIEW);
+        startActivity(intent);
     }
 
-    protected void onListItemClick(ListView l, View v,int position,long
-                                   id)
+    protected void onListItemClick(ListView l, View v,int position,long id)
     {
         Uri uri= ContentUris.withAppendedId(getIntent().getData(),id);
         String action=getIntent().getAction();

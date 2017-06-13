@@ -7,7 +7,7 @@ import android.net.Uri;
 
 import com.example.lzw.myapp.BaseTester;
 import com.example.lzw.myapp.IReportBack;
-import com.example.lzw.myapp.Utils;
+import com.example.lzw.myapp.Utils.Utils;
 
 /**
  * Created by Administrator on 2017/6/11.

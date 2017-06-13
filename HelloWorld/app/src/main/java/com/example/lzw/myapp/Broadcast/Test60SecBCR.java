@@ -1,6 +1,6 @@
 package com.example.lzw.myapp.Broadcast;
 
-import com.example.lzw.myapp.Utils;
+import com.example.lzw.myapp.Utils.Utils;
 
 /**
  * Created by LZW on 2017/06/01.

@@ -3,7 +3,7 @@ package com.example.lzw.myapp.HomeScreenWidget;
 import android.content.Context;
 import android.util.Log;
 
-import com.example.lzw.myapp.Utils;
+import com.example.lzw.myapp.Utils.Utils;
 
 import java.text.ParseException;
 import java.util.HashMap;

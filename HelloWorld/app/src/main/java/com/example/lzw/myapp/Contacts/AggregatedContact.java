@@ -3,7 +3,7 @@ package com.example.lzw.myapp.Contacts;
 import android.database.Cursor;
 import android.provider.ContactsContract;
 
-import com.example.lzw.myapp.Utils;
+import com.example.lzw.myapp.Utils.Utils;
 
 /**
  * Created by Administrator on 2017/6/11.

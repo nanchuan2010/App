@@ -3,8 +3,7 @@ package com.example.lzw.myapp.Contacts;
 import android.database.Cursor;
 import android.provider.ContactsContract;
 
-import com.example.lzw.myapp.Utils;
-import com.koushikdutta.async.Util;
+import com.example.lzw.myapp.Utils.Utils;
 
 /**
  * Created by LZW on 2017/06/12.

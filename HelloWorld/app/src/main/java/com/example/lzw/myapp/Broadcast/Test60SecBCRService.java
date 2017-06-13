@@ -3,7 +3,7 @@ package com.example.lzw.myapp.Broadcast;
 import android.content.Intent;
 import android.util.Log;
 
-import com.example.lzw.myapp.Utils;
+import com.example.lzw.myapp.Utils.Utils;
 
 /**
  * Created by LZW on 2017/06/01.

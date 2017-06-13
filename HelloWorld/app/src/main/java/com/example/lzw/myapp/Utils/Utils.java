@@ -1,4 +1,4 @@
-package com.example.lzw.myapp;
+package com.example.lzw.myapp.Utils;
 
 import android.database.Cursor;
 import android.os.Bundle;

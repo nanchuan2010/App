@@ -1,11 +1,12 @@
 package com.example.lzw.myapp;
 
 import android.app.ProgressDialog;
-import android.app.SearchManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.util.Log;
+
+import com.example.lzw.myapp.Utils.Utils;
 
 /**
  * Created by LZW on 2017/05/26.

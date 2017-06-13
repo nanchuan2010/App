@@ -1,11 +1,12 @@
 package com.example.lzw.myapp;
 
 import android.app.Activity;
-import android.icu.text.LocaleDisplayNames;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
+
+import com.example.lzw.myapp.Utils.Utils;
 
 /**
  * Created by LZW on 2017/05/31.

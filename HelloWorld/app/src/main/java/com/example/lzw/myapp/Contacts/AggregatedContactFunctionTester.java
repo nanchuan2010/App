@@ -8,9 +8,7 @@ import android.provider.ContactsContract;
 import android.util.Log;
 
 import com.example.lzw.myapp.IReportBack;
-import com.example.lzw.myapp.Utils;
-
-import java.net.URI;
+import com.example.lzw.myapp.Utils.Utils;
 
 /**
  * Created by Administrator on 2017/6/11.
