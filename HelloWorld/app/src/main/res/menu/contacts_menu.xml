@@ -13,5 +13,7 @@
         <item android:title="contact entity cursor" android:id="@+id/menu_show_rce_cursor" />
         <item android:title="contact data" android:id="@+id/menu_show_rce_data" />
         <item android:title="Add Contact" android:id="@+id/menu_add_contact" />
+        <item android:title="PRawContacts" android:id="@+id/menu_show_profile_raw_contacts" />
+        <item android:title="Add P Contact" android:id="@+id/menu_add_profile_contact"/>
     </group>
 </menu>

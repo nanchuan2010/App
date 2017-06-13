@@ -17,6 +17,8 @@ public class TestContactsDriverActivity extends DebugActivity implements IReport
     RawContactFunctionTester rawContactFunctionTester=null;
     ContactDataFunctionTester contactDataFunctionTester=null;
     AddContactFunctionTester addContactFunctionTester=null;
+    ProfileRawContactFunctionTester profileRawContactFunctionTester=null;
+    AddProfileContactFunctionTester addProfileContactFunctionTester=null;
 
     public TestContactsDriverActivity() {
         super(R.menu.contacts_menu, tag);
@@ -25,6 +27,8 @@ public class TestContactsDriverActivity extends DebugActivity implements IReport
         rawContactFunctionTester=new RawContactFunctionTester(this,this);
         contactDataFunctionTester=new ContactDataFunctionTester(this,this);
         addContactFunctionTester=new AddContactFunctionTester(this,this);
+        profileRawContactFunctionTester=new ProfileRawContactFunctionTester(this,this);
+        addProfileContactFunctionTester=new AddProfileContactFunctionTester(this,this);
     }
 
     @Override
@@ -78,6 +82,16 @@ public class TestContactsDriverActivity extends DebugActivity implements IReport
         if(item.getItemId()==R.id.menu_add_contact)
         {
             addContactFunctionTester.addContact();
+            return true;
+        }
+        if(item.getItemId()==R.id.menu_show_profile_raw_contacts)
+        {
+            profileRawContactFunctionTester.showAllRawContracts();
+            return true;
+        }
+        if(item.getItemId()==R.id.menu_add_profile_contact)
+        {
+            addProfileContactFunctionTester.addProfileContact();
             return true;
         }
 
