@@ -12,7 +12,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.lzw.myapp.MainActivity;
+import com.example.lzw.myapp.MainActivity_bak;
 
 /**
  * Created by Administrator on 2017/6/7.

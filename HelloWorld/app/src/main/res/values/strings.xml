@@ -101,4 +101,5 @@ Although headers and footers can be done through a list view
 this sample uses explicit text views.
 </string>
     <string name="title_activity_test_contacts_driver">TestContactsDriverActivity</string>
+    <string name="title_activity_main">MainActivity</string>
 </resources>
