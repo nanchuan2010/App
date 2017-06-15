@@ -1,6 +1,7 @@
 package com.example.lzw.myapp.Architecture;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
@@ -124,8 +125,11 @@ public class CalculatorActivity extends Activity implements View.OnClickListener
         }
         else if(btn.getId()==R.id.map)
         {
-            String geo=geoEditText.getText().toString();
-            IntentsUtils.showMapAtLatLong(this,geo);
+            //SomeActivity.invokePick(this);
+            Intent intent=new Intent(this,SomeActivity.class);
+            startActivity(intent);
+/*            String geo=geoEditText.getText().toString();
+            IntentsUtils.showMapAtLatLong(this,geo);*/
         }
 
         number1EditText.setText(Double.toString(value));
@@ -178,4 +182,6 @@ public class CalculatorActivity extends Activity implements View.OnClickListener
         return true;
 
     }
+
+
 }

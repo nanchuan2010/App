@@ -8,8 +8,7 @@
     android:paddingBottom="2dp"
     android:paddingLeft="2dp"
     tools:context=".MainActivity"
-    android:orientation="vertical"
-    android:background="@android:color/darker_gray">
+    android:orientation="vertical">
     <ListView
         android:id="@+id/list_title"
         android:layout_width="match_parent"
