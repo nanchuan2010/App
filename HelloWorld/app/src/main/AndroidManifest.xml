@@ -28,26 +28,40 @@
         android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:supportsRtl="true">
-
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name"
-            >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <!--Architecture-->
-        <activity android:name=".Architecture.CalculatorActivity" android:label="@string/app_name"/>
+        <!-- Architecture -->
+        <activity
+            android:name=".Architecture.CalculatorActivity"
+            android:label="Calculator"
+            android:theme="@style/AppTheme" />
         <activity android:name=".Architecture.SomeActivity">
             <intent-filter>
-                <action android:name="android.intent.action.GET_CONTENT"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <data android:mimeType="vnd.android.cursor.item/vnd.google.note"/>
+                <action android:name="android.intent.action.GET_CONTENT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="vnd.android.cursor.item/vnd.google.note" />
             </intent-filter>
-         </activity>
+        </activity>
+
+        <!-- Controls -->
+        <activity
+            android:name=".Controls.ControlsDemoActivity"
+            android:label="Text Controls" />
+        <activity
+            android:name=".Controls.ListDemoActivity"
+            android:label="@string/title_activity_list_demo"></activity>
+
+
         <activity
             android:name=".MessageActivity"
             android:label="@string/prefTitle">
@@ -126,8 +140,8 @@
             </intent-filter>
         </activity>
 
-
-<!--        <activity
+        <!--
+            <activity
             android:name=".Contacts.TestContactsDriverActivity"
             android:label="@string/title_activity_test_async_task_driver">
             <intent-filter>
@@ -135,7 +149,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>-->
+        </activity>
+        -->
 
         <meta-data
             android:name="com.google.android.gms.version"

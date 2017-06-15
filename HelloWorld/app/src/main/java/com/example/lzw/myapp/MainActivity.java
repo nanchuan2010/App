@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.lzw.myapp.Architecture.CalculatorActivity;
+import com.example.lzw.myapp.Controls.ControlsDemoActivity;
 
 import java.util.HashMap;
 
@@ -26,8 +27,9 @@ public class MainActivity extends Activity {
     }
 
     private void setupListView() {
+
         map.put("Architecture", new CalculatorActivity());
-        map.put("Architecture2", new CalculatorActivity());
+        map.put("Controls", new ControlsDemoActivity());
 
         //String[] listItems=new String[]{"Architecture","AlarmManager","Animation","Loader","Contacts"};
         String[] listItems=new String[map.size()];

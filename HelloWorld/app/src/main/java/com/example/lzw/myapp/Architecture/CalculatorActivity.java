@@ -2,14 +2,23 @@ package com.example.lzw.myapp.Architecture;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.lzw.myapp.Utils.IntentsUtils;
 import com.example.lzw.myapp.R;
+import com.r0adkll.slidr.Slidr;
+import com.r0adkll.slidr.model.SlidrConfig;
+import com.r0adkll.slidr.model.SlidrPosition;
+
+import java.util.zip.Inflater;
 
 /**
  * Created by Administrator on 2017/6/13.
@@ -27,12 +36,29 @@ public class CalculatorActivity extends Activity implements View.OnClickListener
     private EditText geoEditText;
     private EditText callEditText;
 
+    private SlidrConfig mSlidrConfig;
+    private SlidrConfig.Builder mBuilder;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.art_calculator_activity);
         gatherControls();
         setupButtons();
+        int primary=getResources().getColor(R.color.colorPrimary);
+        int secondary=getResources().getColor(R.color.gray);
+        mBuilder=new SlidrConfig.Builder().primaryColor(primary)
+                .secondaryColor(secondary)
+                .scrimColor(Color.BLACK)
+                .position(SlidrPosition.LEFT)
+                .scrimStartAlpha(0.8f)
+                .scrimEndAlpha(0f)
+                .velocityThreshold(5f)
+                .distanceThreshold(.35f);
+        mSlidrConfig=mBuilder.build();
+        Slidr.attach(this,mSlidrConfig);
+
+       // Slidr.attach(this,primary,secondary);
     }
 
     private void gatherControls() {
@@ -125,17 +151,34 @@ public class CalculatorActivity extends Activity implements View.OnClickListener
         }
         else if(btn.getId()==R.id.map)
         {
-            //SomeActivity.invokePick(this);
-            Intent intent=new Intent(this,SomeActivity.class);
-            startActivity(intent);
-/*            String geo=geoEditText.getText().toString();
-            IntentsUtils.showMapAtLatLong(this,geo);*/
+            String geo=geoEditText.getText().toString();
+            IntentsUtils.showMapAtLatLong(this,geo);
         }
 
         number1EditText.setText(Double.toString(value));
     }
 
-    private double plus(double n1,double n2)
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.architecture_menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId()==R.id.menu_Some)
+        {
+            Intent intent=new Intent(this,SomeActivity.class);
+            startActivity(intent);
+            return true;
+        }
+
+        return true;
+    }
+
+    private double plus(double n1, double n2)
     {
         return n1+n2;
     }
