@@ -56,7 +56,7 @@
         <!-- Controls -->
         <activity
             android:name=".Controls.ControlsDemoActivity"
-            android:label="Text Controls" />
+            android:label="@string/controls_demo_activity" />
         <activity
             android:name=".Controls.ListDemoActivity"
             android:label="@string/title_activity_list_demo"></activity>
