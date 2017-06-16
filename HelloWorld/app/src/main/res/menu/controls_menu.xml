@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <group android:id="@+id/menuGroup_Main">
+    <group android:id="@+id/menuGroup_Main" >
         <item android:id="@+id/menu_list" android:title="List Activity" />
+        <item android:id="@+id/menu_custom_adapter" android:title="Custom Adapter" />
+        <item android:id="@+id/menu_style_theme" android:title="Style &amp; Theme"  android:orderInCategory="10"/>
+        <item android:id="@+id/menu_layout" android:icon="@drawable/emo_im_winking"  android:title="Layout"  />
+        <item android:id="@+id/menu_bar" android:title="Menus &amp; bars" />
     </group>
 </menu>

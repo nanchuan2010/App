@@ -10,6 +10,8 @@
     <string name="AutoCompleteHintText1">AutoComplete</string>
     <string name="MultiAutoCompleteHintText1">MultiAutoComplete</string>
     <string name="title_activity_list_demo">List Demo</string>
+    <string name="title_gridview_custom_adapter">Custom Adapter</string>
+    <string name="styledText"><i>Static</i> style in a <b>TextView</b>.</string>
 
     <string name="prefTitle">My Preferences</string>
     <string name="prefSummary">Set Flight Option Preferences</string>
@@ -113,7 +115,9 @@ this sample uses explicit text views.
 </string>
     <string name="title_activity_test_contacts_driver">TestContactsDriverActivity</string>
     <string name="title_activity_main">MainActivity</string>
-
+    <string name="title_activity_layout">Layout</string>
+    <string name="title_activity_menus_and_bars">Menus &amp; Bars</string>
+    <string name="action_settings">Settings</string>
 
 
 </resources>

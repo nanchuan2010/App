@@ -3,70 +3,24 @@ package com.example.lzw.myapp;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.FragmentTransaction;
-import android.app.ListActivity;
 import android.app.SearchManager;
 import android.app.SearchableInfo;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Color;
-import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
-import android.nfc.Tag;
 import android.os.Bundle;
-import android.telephony.SmsMessage;
-import android.text.Spannable;
-import android.text.Spanned;
-import android.text.format.Formatter;
-import android.text.style.BackgroundColorSpan;
-import android.text.style.StyleSpan;
-import android.text.util.Linkify;
 import android.util.Log;
-import android.util.SparseBooleanArray;
 import android.view.ContextMenu;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
-import android.widget.BaseAdapter;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.DatePicker;
-import android.widget.EditText;
-import android.widget.GridView;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.MultiAutoCompleteTextView;
-import android.widget.PopupMenu;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.SearchView;
-import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
-import android.widget.Switch;
-import android.widget.TextView;
-import android.widget.TimePicker;
-import android.widget.Toast;
-
-import junit.framework.TestListener;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 
 public class ExampleActivity extends Activity{
 
@@ -154,7 +108,7 @@ public class ExampleActivity extends Activity{
        // return true;
         super.onCreateOptionsMenu(menu);
         MenuInflater inflater=getMenuInflater();
-        inflater.inflate(R.menu.my_menu,menu);
+        inflater.inflate(R.menu.controls_my_menu,menu);
         setupSearchView(menu);
 
 //        int group1=1;
@@ -220,7 +174,7 @@ public class ExampleActivity extends Activity{
         //EditText tv=(EditText) findViewById(R.id.textViewId);
 //        PopupMenu popup=new PopupMenu(this,tv);
 //
-//        popup.inflate(R.menu.my_menu);
+//        popup.inflate(R.menu.controls_my_menu);
 //        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
 //            @Override
 //            public boolean onMenuItemClick(MenuItem menuItem) {

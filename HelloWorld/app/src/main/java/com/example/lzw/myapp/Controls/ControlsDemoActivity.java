@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
+import android.telephony.SmsMessage;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.SubMenu;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -24,6 +26,7 @@ import android.widget.Toast;
 
 import com.example.lzw.myapp.R;
 
+import java.lang.reflect.Method;
 import java.util.Formatter;
 
 
@@ -167,24 +170,59 @@ public class ControlsDemoActivity extends Activity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        setIconVisible(menu,true);
         super.onCreateOptionsMenu(menu);
         MenuInflater inflater=getMenuInflater();
         inflater.inflate(R.menu.controls_menu,menu);
+
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id=item.getItemId();
+        Intent intent=new Intent();
         switch (id)
         {
             case R.id.menu_list:
-                Intent intent=new Intent(this,ListDemoActivity.class);
+                intent.setClass(this,ListDemoActivity.class);
                 startActivity(intent);
-                return true;
-
+                break;
+            case R.id.menu_custom_adapter:
+                intent.setClass(this,GridViewCustomAdapter.class);
+                startActivity(intent);
+                break;
+            case R.id.menu_style_theme:
+                intent.setClass(this,StyleThemeActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.menu_layout:
+                intent.setClass(this,LayoutActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.menu_bar:
+                intent.setClass(this,MenusAndBarsActivity.class);
+                startActivity(intent);
+                break;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    //enable为true时，菜单添加图标有效，enable为false时无效。4.0系统默认无效
+    private void setIconVisible(Menu menu, boolean enable)
+    {
+        try
+        {
+            Method method = menu.getClass().getDeclaredMethod("setOptionalIconsVisible", boolean.class);
+            method.setAccessible(true);
+
+            //MenuBuilder实现Menu接口，创建菜单时，传进来的menu其实就是MenuBuilder对象(java的多态特征)
+            method.invoke(menu, enable);
+
+        } catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 }

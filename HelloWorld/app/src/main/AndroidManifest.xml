@@ -59,9 +59,16 @@
             android:label="@string/controls_demo_activity" />
         <activity
             android:name=".Controls.ListDemoActivity"
-            android:label="@string/title_activity_list_demo"></activity>
-
-
+            android:label="@string/title_activity_list_demo" />
+        <activity
+            android:name=".Controls.GridViewCustomAdapter"
+            android:label="@string/title_gridview_custom_adapter" />
+        <activity
+            android:name=".Controls.StyleThemeActivity"
+            android:label="Style &amp; Theme" />
+        <activity
+            android:name=".Controls.LayoutActivity"
+            android:label="@string/title_activity_layout" />
         <activity
             android:name=".MessageActivity"
             android:label="@string/prefTitle">
@@ -238,7 +245,9 @@
             android:name=".Contacts.TestContactsDriverActivity"
             android:label="@string/title_activity_test_contacts_driver"></activity>
         -->
-
+        <activity
+            android:name=".Controls.MenusAndBarsActivity"
+            android:label="@string/title_activity_menus_and_bars"></activity>
     </application>
 
 </manifest>
