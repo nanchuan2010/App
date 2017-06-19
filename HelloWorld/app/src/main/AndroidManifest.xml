@@ -46,9 +46,7 @@
         <activity android:name=".Architecture.SomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.GET_CONTENT" />
-
                 <category android:name="android.intent.category.DEFAULT" />
-
                 <data android:mimeType="vnd.android.cursor.item/vnd.google.note" />
             </intent-filter>
         </activity>
@@ -70,40 +68,65 @@
             android:name=".Controls.LayoutActivity"
             android:label="@string/title_activity_layout" />
         <activity
-            android:name=".MessageActivity"
-            android:label="@string/prefTitle">
+            android:name=".Controls.MenusAndBarsActivity"
+            android:label="@string/title_activity_menus_and_bars">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable"
+                        android:resource="@xml/searchable" />
+        </activity>
+
+        <!--Fragments-->
+        <activity android:name=".Fragments.FragmentActivity"  android:label="Fragments"/>
+        <activity android:name=".Fragments.DetailsActivity" android:label="Titles"/>
+
+        <!--Dialogs-->
+        <activity android:name=".Dialogs.DialogActivity"  android:label="Dialogs"/>
+
+        <!--Preferences-->
+        <activity android:name=".Preferences.MainPreferenceActivity" android:label="Preferences">
             <intent-filter>
                 <action android:name="com.example.lzw.myapp.intent.action.MainPreference" />
-
-                <category android:name="android.intent.category.PREFERENCE" />
             </intent-filter>
         </activity>
+
+        <!--Handlers-->
+        <activity android:name=".Handlers.HandlersDriverActivity" android:label="Handlers" />
+
+        <!--Services-->
+        <activity android:name=".Services.GetAndPostActivity" android:label="Get &amp; Post" />
+        <activity android:name=".Services.ServiceActivity" android:label="Services" android:launchMode="singleTop" />
+        <service android:name=".Services.BackgroundService" />
+        <service android:name=".Services.StockQuoteService">
+            <intent-filter>
+                <action android:name="com.example.lzw.myapp.IStockQuoteService" />
+            </intent-filter>
+        </service>
+        <activity android:name=".Services.StockQuoteClient" android:label="Stock Quote Client" />
+        <service android:name=".Services.StockQuoteService2">
+            <intent-filter>
+                <action android:name="com.example.lzw.myapp.IStockQuoteService2" />
+            </intent-filter>
+        </service>
+        <activity
+            android:name=".Services.MessengerClient"
+            android:label="@string/prefTitle">
+        </activity>
+
+
         <activity
             android:name=".SearchResultsActivity"
             android:configChanges="orientation|keyboardHidden"
             android:label="Search Results">
             <intent-filter>
-                <action android:name="android.intent.action.SEARCH" />
+                <action android:name="android.intent.action.SEARCH"/>
             </intent-filter>
-
-            <meta-data
-                android:name="android.app.searchable"
+            <meta-data android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
         </activity>
-        <activity android:name=".DetailsActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
 
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
 
-        <service android:name=".BackgroundService" />
-        <service android:name=".StockQuoteService2">
-            <intent-filter>
-                <action android:name="com.example.lzw.myapp.IStockQuoteService2" />
-            </intent-filter>
-        </service>
 
         <receiver android:name=".Broadcast.TestReceiver">
             <intent-filter>
@@ -245,9 +268,7 @@
             android:name=".Contacts.TestContactsDriverActivity"
             android:label="@string/title_activity_test_contacts_driver"></activity>
         -->
-        <activity
-            android:name=".Controls.MenusAndBarsActivity"
-            android:label="@string/title_activity_menus_and_bars"></activity>
+
     </application>
 
 </manifest>

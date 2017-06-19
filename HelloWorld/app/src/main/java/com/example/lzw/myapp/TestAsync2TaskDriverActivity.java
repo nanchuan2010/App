@@ -66,7 +66,7 @@ public class TestAsync2TaskDriverActivity extends MonitoredActivityWithADOSuppor
       //  if(item.getItemId()==R.id.menu_test_async3)
         {
             startTargetActivity(TestProgressBarDriverActivity.class);
-            //startTargetActivity(MessageActivity.class);
+            //startTargetActivity(MessengerClient.class);
         }
 
         return true;

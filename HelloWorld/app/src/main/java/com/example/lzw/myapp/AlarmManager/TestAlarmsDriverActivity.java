@@ -16,13 +16,13 @@ public class TestAlarmsDriverActivity extends Activity implements IReportBack{
 
     public static final String tag="TestAlarmsDriverActivity";
 
-    private CancelRepeatingAlarmTester alarmTester=null;
+    private CancelRepeatingAlarmListener alarmTester=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_async_task_driver);
-        alarmTester=new CancelRepeatingAlarmTester(this,this);
+        alarmTester=new CancelRepeatingAlarmListener(this,this);
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {

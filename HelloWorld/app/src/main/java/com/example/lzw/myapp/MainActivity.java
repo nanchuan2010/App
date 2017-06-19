@@ -10,13 +10,18 @@ import android.widget.ListView;
 
 import com.example.lzw.myapp.Architecture.CalculatorActivity;
 import com.example.lzw.myapp.Controls.ControlsDemoActivity;
+import com.example.lzw.myapp.Dialogs.DialogActivity;
+import com.example.lzw.myapp.Fragments.FragmentActivity;
+import com.example.lzw.myapp.Handlers.HandlersDriverActivity;
+import com.example.lzw.myapp.Preferences.MainPreferenceActivity;
+import com.example.lzw.myapp.Services.GetAndPostActivity;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 public class MainActivity extends Activity {
 
     private ListView listView;
-    HashMap<String,Activity> map=new HashMap<String,Activity>();
+    LinkedHashMap<String,Activity> map=new LinkedHashMap<String,Activity>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +35,11 @@ public class MainActivity extends Activity {
 
         map.put("Architecture", new CalculatorActivity());
         map.put("Controls", new ControlsDemoActivity());
+        map.put("Fragments",new FragmentActivity());
+        map.put("Dialogs",new DialogActivity());
+        map.put("Preferences",new MainPreferenceActivity());
+        map.put("Handlers",new HandlersDriverActivity());
+        map.put("Services",new GetAndPostActivity());
 
         //String[] listItems=new String[]{"Architecture","AlarmManager","Animation","Loader","Contacts"};
         String[] listItems=new String[map.size()];

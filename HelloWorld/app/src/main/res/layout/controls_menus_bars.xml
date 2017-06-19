@@ -59,7 +59,44 @@
     <Button
         android:id="@+id/btnShowPopup"
         android:text="Popup"
+        android:layout_marginLeft="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
+    <TextView
+        android:layout_marginTop="30dp"
+        android:text="Action Bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_marginLeft="20dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btnStandardActionBar"
+            android:text="Standard Action Bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <Button
+            android:id="@+id/btnTabbedActionBar"
+            android:text="Tabbed Action Bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <Button
+            android:id="@+id/btnListActionBar"
+            android:text="List Action Bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <Button
+            android:id="@+id/btnSearchView"
+            android:text="Search View"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+
 </LinearLayout>

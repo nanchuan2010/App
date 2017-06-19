@@ -2,25 +2,17 @@ package com.example.lzw.myapp;
 
 
 import android.app.Activity;
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
-import android.net.Uri;
 import android.os.Bundle;
-import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.util.List;
+import com.example.lzw.myapp.Preferences.MainPreferenceActivity;
 
 public class MainActivity_bak extends Activity
 {
@@ -31,9 +23,9 @@ public class MainActivity_bak extends Activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.services_main_activity);
 
-        PreferenceManager.setDefaultValues(this,R.xml.main,false);
+        PreferenceManager.setDefaultValues(this,R.xml.preference_main,false);
         resources=this.getResources();
         tv=(TextView)findViewById(R.id.text1);
         setOptionText();

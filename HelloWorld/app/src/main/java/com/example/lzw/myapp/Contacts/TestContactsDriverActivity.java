@@ -1,10 +1,9 @@
 package com.example.lzw.myapp.Contacts;
 
-import android.os.Bundle;
-import android.app.Activity;
 import android.util.Log;
 import android.view.MenuItem;
 
+import com.example.lzw.myapp.DebugActivity;
 import com.example.lzw.myapp.IReportBack;
 import com.example.lzw.myapp.R;
 
@@ -12,23 +11,23 @@ public class TestContactsDriverActivity extends DebugActivity implements IReport
 
     public static final String tag="Test Contacts";
 
-    AccountsFunctionTester accountsFunctionTester=null;
-    AggregatedContactFunctionTester aggregatedContactFunctionTester=null;
-    RawContactFunctionTester rawContactFunctionTester=null;
-    ContactDataFunctionTester contactDataFunctionTester=null;
-    AddContactFunctionTester addContactFunctionTester=null;
-    ProfileRawContactFunctionTester profileRawContactFunctionTester=null;
-    AddProfileContactFunctionTester addProfileContactFunctionTester=null;
+    AccountsFunctionListener accountsFunctionTester=null;
+    AggregatedContactFunctionListener aggregatedContactFunctionTester=null;
+    RawContactFunctionListener rawContactFunctionTester=null;
+    ContactDataFunctionListener contactDataFunctionTester=null;
+    AddContactFunctionListener addContactFunctionTester=null;
+    ProfileRawContactFunctionListener profileRawContactFunctionTester=null;
+    AddProfileContactFunctionListener addProfileContactFunctionTester=null;
 
     public TestContactsDriverActivity() {
         super(R.menu.contacts_menu, tag);
-        accountsFunctionTester=new AccountsFunctionTester(this,this);
-        aggregatedContactFunctionTester=new AggregatedContactFunctionTester(this,this);
-        rawContactFunctionTester=new RawContactFunctionTester(this,this);
-        contactDataFunctionTester=new ContactDataFunctionTester(this,this);
-        addContactFunctionTester=new AddContactFunctionTester(this,this);
-        profileRawContactFunctionTester=new ProfileRawContactFunctionTester(this,this);
-        addProfileContactFunctionTester=new AddProfileContactFunctionTester(this,this);
+        accountsFunctionTester=new AccountsFunctionListener(this,this);
+        aggregatedContactFunctionTester=new AggregatedContactFunctionListener(this,this);
+        rawContactFunctionTester=new RawContactFunctionListener(this,this);
+        contactDataFunctionTester=new ContactDataFunctionListener(this,this);
+        addContactFunctionTester=new AddContactFunctionListener(this,this);
+        profileRawContactFunctionTester=new ProfileRawContactFunctionListener(this,this);
+        addProfileContactFunctionTester=new AddProfileContactFunctionListener(this,this);
     }
 
     @Override

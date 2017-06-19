@@ -62,7 +62,7 @@ public class MyLongTask1 extends AsyncTask<String,Integer,Integer> implements Di
     }
 
     protected void onPostExecute(Integer result) {
-        //Runs on the main ui thread
+        //Runs on the services_main_activity ui thread
         Utils.logThreadSignature(this.tag);
         r.reportBack(tag, "onPostExecute result:" + result);
         pd.cancel();

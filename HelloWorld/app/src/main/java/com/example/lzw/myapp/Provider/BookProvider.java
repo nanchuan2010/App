@@ -81,7 +81,7 @@ public class BookProvider extends ContentProvider {
 
     @Override
     public boolean onCreate() {
-        Log.d(TAG,"main onCreate called");
+        Log.d(TAG,"preference_main onCreate called");
         mOpenHelper=new DatabaseHelper(getContext());
         return true;
     }

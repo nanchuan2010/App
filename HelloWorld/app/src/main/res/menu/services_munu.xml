@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/menuGroup_Main">
+        <item android:id="@+id/menu_local_service" android:title="Local Service" />
+        <item android:id="@+id/menu_stock_quote" android:title="Stock Quote" />
+        <item android:id="@+id/menu_message_handler" android:title="Message &amp; Hanlder" />
+    </group>
+</menu>

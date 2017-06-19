@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btnGetRequest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send Get Request"
+        android:onClick="doClick"/>
+    <Button
+        android:id="@+id/btnPostRequest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send Post Request"
+        android:onClick="doClick"/>
+    <Button
+        android:id="@+id/btnSendMultipart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send Multipart Request"
+        android:onClick="doClick"/>
+    <Button
+        android:id="@+id/btnSendCustom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Custom HTTP Client"
+        android:onClick="doClick"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tvResponse"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </ScrollView>
+
+
+</LinearLayout>

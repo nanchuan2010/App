@@ -1,5 +1,9 @@
 package com.example.lzw.myapp.Controls;
 
+import android.app.SearchManager;
+import android.app.SearchableInfo;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -19,6 +23,7 @@ import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.MultiAutoCompleteTextView;
 import android.widget.RadioGroup;
+import android.widget.SearchView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -46,6 +51,8 @@ public class ControlsDemoActivity extends Activity {
         createRadioControls();
         createImageViewControls();
         createDateTimeControls();
+
+
     }
 
     private static final String[] CONTRIES=new String[]{
@@ -175,6 +182,8 @@ public class ControlsDemoActivity extends Activity {
         MenuInflater inflater=getMenuInflater();
         inflater.inflate(R.menu.controls_menu,menu);
 
+        setupSearchView(menu);
+
         return true;
     }
 
@@ -207,6 +216,16 @@ public class ControlsDemoActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void setupSearchView(Menu menu)
+    {
+        SearchView searchView=(SearchView)menu.findItem(R.id.menu_search).getActionView();
+        SearchManager searchManager=(SearchManager)getSystemService(Context.SEARCH_SERVICE);
+        ComponentName cn=new ComponentName(this,MenusAndBarsActivity.class);
+        SearchableInfo info=searchManager.getSearchableInfo(cn);
+        searchView.setSearchableInfo(info);
+        searchView.setIconifiedByDefault(false);
     }
 
     //enable为true时，菜单添加图标有效，enable为false时无效。4.0系统默认无效

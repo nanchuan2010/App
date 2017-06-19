@@ -6,5 +6,9 @@
         <item android:id="@+id/menu_style_theme" android:title="Style &amp; Theme"  android:orderInCategory="10"/>
         <item android:id="@+id/menu_layout" android:icon="@drawable/emo_im_winking"  android:title="Layout"  />
         <item android:id="@+id/menu_bar" android:title="Menus &amp; bars" />
+        <item android:showAsAction="ifRoom" android:id="@+id/menu_search"
+            android:title="Search"
+            android:actionViewClass="android.widget.SearchView"
+            />
     </group>
 </menu>

@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,14 +13,14 @@ public class TestAsyncTaskDriverActivity extends Activity implements IReportBack
 
     public static final String tag="AsyncTaskDriverActivity";
 
-    private AsyncTester asyncTester=null;
+    private AsyncListener asyncTester=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_async_task_driver);
 
-        asyncTester=new AsyncTester(this,this);
+        asyncTester=new AsyncListener(this,this);
     }
 
     @Override
