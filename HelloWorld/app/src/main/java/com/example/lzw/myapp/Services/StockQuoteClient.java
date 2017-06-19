@@ -49,7 +49,7 @@ public class StockQuoteClient extends Activity {
                 {
                    /* Intent intent=new Intent(this,IStockQuoteService.class);
                     intent.setPackage(IStockQuoteService.class.getPackage().getName());*/
-                    getApplicationContext().bindService(new Intent(this,IStockQuoteService.class),serConn, Context.BIND_AUTO_CREATE);
+                    bindService(new Intent(IStockQuoteService.class.getName()),serConn, Context.BIND_AUTO_CREATE);
                 }
                 else
                 {
@@ -63,10 +63,7 @@ public class StockQuoteClient extends Activity {
             case R.id.bindBtnComplex:
                 if(((ToggleButton)view).isChecked())
                 {
-                    Intent intent=new Intent(IStockQuoteService2.class.getName());
-                    intent.setPackage("com.example.lzw.myapp");
-                    startService(intent);
-                    bindService(intent,serConn2, Context.BIND_AUTO_CREATE);
+                    bindService(new Intent(IStockQuoteService2.class.getName()),serConn2, Context.BIND_AUTO_CREATE);
                 }
                 else
                 {

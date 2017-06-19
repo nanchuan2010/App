@@ -82,8 +82,6 @@ public class ClientFrag extends Fragment {
     {
         appContext=getActivity().getApplicationContext();
         Intent intent=new Intent("com.example.lzw.myapp.Services.MessengerService");
-        intent.setPackage("com.example.lzw.myapp");
-        getActivity().startService(intent);
         if(mIsBound=appContext.bindService(intent,mConnection,Context.BIND_AUTO_CREATE))
         {
             updateStatus("Bound to service.");

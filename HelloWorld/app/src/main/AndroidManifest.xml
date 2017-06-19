@@ -100,19 +100,24 @@
         <service android:name=".Services.BackgroundService" />
         <service android:name=".Services.StockQuoteService">
             <intent-filter>
-                <action android:name="com.example.lzw.myapp.IStockQuoteService" />
+                <action android:name="com.example.lzw.myapp.Services.IStockQuoteService" />
             </intent-filter>
         </service>
         <activity android:name=".Services.StockQuoteClient" android:label="Stock Quote Client" />
         <service android:name=".Services.StockQuoteService2">
             <intent-filter>
-                <action android:name="com.example.lzw.myapp.IStockQuoteService2" />
+                <action android:name="com.example.lzw.myapp.Services.IStockQuoteService2" />
             </intent-filter>
         </service>
         <activity
             android:name=".Services.MessengerClient"
-            android:label="@string/prefTitle">
+            android:label="Messenger &amp; Handler">
         </activity>
+        <service android:name=".Services.MessengerService">
+            <intent-filter>
+                <action android:name="com.example.lzw.myapp.Services.MessengerService"/>
+            </intent-filter>
+        </service>
 
 
         <activity
