@@ -9,6 +9,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.lzw.myapp.AsyncTask.AsyncTesterFragment;
+import com.example.lzw.myapp.AsyncTask.RetainedADO;
+
 /**
  * Created by LZW on 2017/05/31.
  */

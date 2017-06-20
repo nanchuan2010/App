@@ -1,35 +1,36 @@
-package com.example.lzw.myapp;
+package com.example.lzw.myapp.AsyncTask;
 
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.example.lzw.myapp.IReportBack;
 import com.example.lzw.myapp.Utils.Utils;
 
 /**
  * Created by LZW on 2017/05/25.
  */
-public class MyLongTask extends AsyncTask<String,Integer,Integer> {
+public class MyLongTask1 extends AsyncTask<String, Integer, Integer> {
     IReportBack r;
     Context ctx;
     public String tag = null;
     ProgressDialog pd = null;
 
-    MyLongTask(IReportBack inr, Context inCtx, String inTag) {
-        r = inr; ctx = inCtx; tag = inTag;
+    MyLongTask1(IReportBack inr, Context inCtx, String inTag) {
+        r = inr;
+        ctx = inCtx;
+        tag = inTag;
     }
 
     @Override
     protected Integer doInBackground(String... strings) {
-       Utils.logThreadSignature(this.tag);
-        for (String s:strings)
-        {
-            Log.d(tag,"Processing:"+s);
+        Utils.logThreadSignature(this.tag);
+        for (String s : strings) {
+            Log.d(tag, "Processing:" + s);
         }
 
-        for (int i=0;i<3;i++)
-        {
+        for (int i = 0; i < 3; i++) {
             Utils.sleepForInSecs(2);
             publishProgress(i);
         }
@@ -40,7 +41,7 @@ public class MyLongTask extends AsyncTask<String,Integer,Integer> {
     @Override
     protected void onPreExecute() {
         Utils.logThreadSignature(this.tag);
-        pd = ProgressDialog.show(ctx, "title", "In Progress...",true);
+        pd = ProgressDialog.show(ctx, "title", "In Progress...", true);
     }
 
     protected void onProgressUpdate(Integer... progress) {

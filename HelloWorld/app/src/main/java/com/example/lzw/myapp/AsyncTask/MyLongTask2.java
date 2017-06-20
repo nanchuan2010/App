@@ -1,4 +1,4 @@
-package com.example.lzw.myapp;
+package com.example.lzw.myapp.AsyncTask;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -6,33 +6,34 @@ import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.example.lzw.myapp.IReportBack;
 import com.example.lzw.myapp.Utils.Utils;
 
 /**
  * Created by LZW on 2017/05/26.
  */
-public class MyLongTask1 extends AsyncTask<String,Integer,Integer> implements DialogInterface.OnCancelListener {
+public class MyLongTask2 extends AsyncTask<String, Integer, Integer> implements DialogInterface.OnCancelListener {
     IReportBack r;
     Context ctx;
     public String tag = null;
     ProgressDialog pd = null;
 
-    MyLongTask1(IReportBack inr, Context inCtx, String inTag) {
-        r = inr; ctx = inCtx; tag = inTag;
+    MyLongTask2(IReportBack inr, Context inCtx, String inTag) {
+        r = inr;
+        ctx = inCtx;
+        tag = inTag;
     }
 
     @Override
     protected Integer doInBackground(String... strings) {
         Utils.logThreadSignature(this.tag);
-        for (String s:strings)
-        {
-            Log.d(tag,"Processing:"+s);
+        for (String s : strings) {
+            Log.d(tag, "Processing:" + s);
         }
 
-        for (int i=0;i<5;i++)
-        {
-            Utils.sleepForInSecs(2);
+        for (int i = 0; i < 5; i++) {
             publishProgress(i);
+            Utils.sleepForInSecs(2);
         }
 
         return 1;
@@ -41,7 +42,7 @@ public class MyLongTask1 extends AsyncTask<String,Integer,Integer> implements Di
     @Override
     protected void onPreExecute() {
         Utils.logThreadSignature(this.tag);
-        pd=new ProgressDialog(ctx);
+        pd = new ProgressDialog(ctx);
         pd.setTitle("title");
         pd.setMessage("In Progress...");
         pd.setCancelable(true);
@@ -68,15 +69,14 @@ public class MyLongTask1 extends AsyncTask<String,Integer,Integer> implements Di
         pd.cancel();
     }
 
-    protected void reportThreadSignature()
-    {
-        String s=Utils.getThreadSignature();
-        r.reportBack(tag,s);
+    protected void reportThreadSignature() {
+        String s = Utils.getThreadSignature();
+        r.reportBack(tag, s);
     }
 
     @Override
     public void onCancel(DialogInterface dialogInterface) {
-        r.reportBack(tag,"Cancel called");
+        r.reportBack(tag, "Cancel called");
         this.cancel(true);
     }
 }

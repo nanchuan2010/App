@@ -3,6 +3,8 @@ package com.example.lzw.myapp;
 import android.app.Activity;
 import android.util.Log;
 
+import com.example.lzw.myapp.AsyncTask.RetainedADO;
+
 /**
  * Created by LZW on 2017/05/31.
  */

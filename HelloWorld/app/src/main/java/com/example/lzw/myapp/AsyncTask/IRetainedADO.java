@@ -1,9 +1,12 @@
-package com.example.lzw.myapp;
+package com.example.lzw.myapp.AsyncTask;
+
+import com.example.lzw.myapp.MonitoredActivityWithADOSupport;
 
 /**
  * Created by LZW on 2017/05/31.
  */
 public interface IRetainedADO extends IActivityDependentObject {
+
     public MonitoredActivityWithADOSupport getActivity();
 
     public void reset();

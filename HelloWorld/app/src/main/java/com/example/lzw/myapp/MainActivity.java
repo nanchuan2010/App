@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.lzw.myapp.Architecture.CalculatorActivity;
+import com.example.lzw.myapp.AsyncTask.TestAsyncTaskDriverActivity;
 import com.example.lzw.myapp.Controls.ControlsDemoActivity;
 import com.example.lzw.myapp.Dialogs.DialogActivity;
 import com.example.lzw.myapp.Fragments.FragmentActivity;
@@ -40,6 +41,7 @@ public class MainActivity extends Activity {
         map.put("Preferences",new MainPreferenceActivity());
         map.put("Handlers",new HandlersDriverActivity());
         map.put("Services",new GetAndPostActivity());
+        map.put("Async Task",new TestAsyncTaskDriverActivity());
 
         //String[] listItems=new String[]{"Architecture","AlarmManager","Animation","Loader","Contacts"};
         String[] listItems=new String[map.size()];

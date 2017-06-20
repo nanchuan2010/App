@@ -1,4 +1,4 @@
-package com.example.lzw.myapp;
+package com.example.lzw.myapp.AsyncTask;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -14,16 +14,17 @@ import android.view.ViewGroup;
 /**
  * Created by LZW on 2017/05/31.
  */
-public class MonitoredFragment extends Fragment{
-    public static String DEBUG_TAG_NAME="com.androidbook.asynctask.debugtag";
-    private String tag="No tag specified yet.Still being constructed";
+public class MonitoredFragment extends Fragment {
+    public static String DEBUG_TAG_NAME = "com.androidbook.asynctask.debugtag";
+    private String tag = "No tag specified yet.Still being constructed";
 
-    boolean bUIReady=false;
-    public MonitoredFragment(){}
+    boolean bUIReady = false;
 
-    public void init(String tagname, Bundle argsBundle)
-    {
-        argsBundle.putString(this.DEBUG_TAG_NAME,tagname);
+    public MonitoredFragment() {
+    }
+
+    public void init(String tagname, Bundle argsBundle) {
+        argsBundle.putString(this.DEBUG_TAG_NAME, tagname);
         this.setArguments(argsBundle);
     }
 
@@ -31,34 +32,29 @@ public class MonitoredFragment extends Fragment{
     public void onAttach(Context context) {
         super.onAttach(context);
         reConstructTagNameFromArgsBundle();
-        Log.d(tag,"onAttach called.Very first call back");
+        Log.d(tag, "onAttach called.Very first call back");
     }
 
-    private void reConstructTagNameFromArgsBundle()
-    {
-        Bundle args=this.getArguments();
-        if(args==null)
-        {
-            Log.w(tag,"Sorry no args set to collect the tag name");
+    private void reConstructTagNameFromArgsBundle() {
+        Bundle args = this.getArguments();
+        if (args == null) {
+            Log.w(tag, "Sorry no args set to collect the tag name");
             return;
         }
 
-        String tagname=args.getString(this.DEBUG_TAG_NAME);
-        if (tagname==null)
-        {
-            Log.w(tag,"Sorry no debug tag specified");
+        String tagname = args.getString(this.DEBUG_TAG_NAME);
+        if (tagname == null) {
+            Log.w(tag, "Sorry no debug tag specified");
             return;
-        }
-        else
-        {
-            tag=tagname;
+        } else {
+            tag = tagname;
         }
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d(tag,"onCreate called.Activity creation hasn't finished yet.");
+        Log.d(tag, "onCreate called.Activity creation hasn't finished yet.");
     }
 
 
@@ -71,34 +67,33 @@ public class MonitoredFragment extends Fragment{
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        Log.d(tag,"onActivityCreated called.All views including activity are ready.");
+        Log.d(tag, "onActivityCreated called.All views including activity are ready.");
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        Log.d(tag,"onstart");
-        bUIReady=true;
+        Log.d(tag, "onstart");
+        bUIReady = true;
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        Log.d(tag,"onResume");
+        Log.d(tag, "onResume");
     }
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        Log.d(tag,"onConfigChanged");
+        Log.d(tag, "onConfigChanged");
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Log.d(tag,"onDestroy");
-        if(getActivity().isFinishing()==true)
-        {
+        Log.d(tag, "onDestroy");
+        if (getActivity().isFinishing() == true) {
             releaseResources();
         }
     }
@@ -106,38 +101,38 @@ public class MonitoredFragment extends Fragment{
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        Log.d(tag,"onDestroyView");
+        Log.d(tag, "onDestroyView");
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        Log.d(tag,"onDetach");
+        Log.d(tag, "onDetach");
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        Log.d(tag,"onPause");
+        Log.d(tag, "onPause");
     }
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        Log.d(tag,"onSaveInstanceState");
+        Log.d(tag, "onSaveInstanceState");
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        Log.d(tag,"onstop");
-        bUIReady=false;
+        Log.d(tag, "onstop");
+        bUIReady = false;
     }
 
     @Override
     public void onTrimMemory(int level) {
         super.onTrimMemory(level);
-        Log.d(tag,"onTrimMemory. level:"+level);
+        Log.d(tag, "onTrimMemory. level:" + level);
     }
 
     @Override
@@ -145,21 +140,18 @@ public class MonitoredFragment extends Fragment{
         super.onViewCreated(view, savedInstanceState);
     }
 
-    public boolean isActivityReady()
-    {
-        Activity act=getActivity();
-        if(act!=null)
+    public boolean isActivityReady() {
+        Activity act = getActivity();
+        if (act != null)
             return true;
         return false;
     }
 
-    public boolean isbUIReady()
-    {
+    public boolean isbUIReady() {
         return bUIReady;
     }
 
-    public void releaseResources()
-    {
-        Log.d(tag,"Fragment release resources");
+    public void releaseResources() {
+        Log.d(tag, "Fragment release resources");
     }
 }

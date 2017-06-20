@@ -6,7 +6,6 @@ import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.app.Activity;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
 import android.util.Log;
@@ -16,7 +15,6 @@ import android.view.View;
 import android.widget.SearchView;
 import android.widget.SimpleCursorAdapter;
 
-import com.example.lzw.myapp.MonitoredActivity;
 import com.example.lzw.myapp.R;
 
 public class TestLoadersActivity extends MonitoredListActivity

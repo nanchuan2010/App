@@ -1,6 +1,8 @@
-package com.example.lzw.myapp;
+package com.example.lzw.myapp.AsyncTask.;
 
 import android.app.Activity;
+
+import com.example.lzw.myapp.AsyncTask.MyLongTaskWithRADO;
 
 /**
  * Created by LZW on 2017/05/31.

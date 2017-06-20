@@ -1,4 +1,4 @@
-package com.example.lzw.myapp;
+package com.example.lzw.myapp.AsyncTask;
 
 import android.app.Activity;
 import android.app.DialogFragment;
@@ -6,62 +6,61 @@ import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.example.lzw.myapp.IFragmentDialogCallbacks;
+import com.example.lzw.myapp.IReportBack;
+import com.example.lzw.myapp.MonitoredActivityWithADOSupport;
 import com.example.lzw.myapp.Utils.Utils;
 
 /**
  * Created by LZW on 2017/05/31.
  */
-public class MyLongTaskWithFragment extends AsyncTask<String,Integer,Integer> implements IFragmentDialogCallbacks,IWorkerObject {
+public class MyLongTaskWithRADO extends AsyncTask<String,Integer,Integer> implements IRetainedADO,IFragmentDialogCallbacks {
     public String tag=null;
     public static String PROGRESS_DIALOG_FRAGMENT_TAG_NAME="AsyncDialog";
 
-    public MonitoredFragment retainedFragment;
-    private boolean bDoneFlag=false;
+    private IRetainedADO retainedADOImpl;
 
     private IReportBack r;
 
-    MyLongTaskWithFragment(MonitoredFragment parentFragment,IReportBack inr,String inTag)
+    MyLongTaskWithRADO(IRetainedADO parentRADO,IReportBack inr,String inTag)
     {
         tag=inTag;
-        retainedFragment=parentFragment;
+        retainedADOImpl=new RetainedADO(parentRADO,inTag,this);
         r=inr;
     }
 
     protected void onPreExecute()
     {
         Utils.logThreadSignature(this.tag);
-        Log.d(tag,"bDoneFlag:"+bDoneFlag);
         showDialogFragment();
     }
 
     private void showDialogFragment()
     {
-        Activity act=retainedFragment.getActivity();
+        Activity act=this.getActivity();
         ProgressDialogFragment pdf=new ProgressDialogFragment();
         pdf.show(act.getFragmentManager(),this.PROGRESS_DIALOG_FRAGMENT_TAG_NAME);
     }
 
     private ProgressDialogFragment getDialog()
     {
-        Activity act=retainedFragment.getActivity();
+        Activity act=getActivity();
         if(act==null)
         {
-            Log.d(tag,"activity is null.shouldnt be.returning a null dialog");
+            Log.d(tag,"activity is null.shouldnt be. returning a null dialog");
             return null;
         }
 
         return (ProgressDialogFragment)act.getFragmentManager().findFragmentByTag(this.PROGRESS_DIALOG_FRAGMENT_TAG_NAME);
     }
 
-
     protected void onProgressUpdate(Integer... progress)
     {
         Utils.logThreadSignature(this.tag);
         this.reportThreadSignature();
-
         Integer i=progress[0];
 
-        if(retainedFragment.isbUIReady())
+        if(isActivityReady())
         {
             r.reportBack(tag,"Progress:"+i.toString());
             setProgressOnProgressDialog(i);
@@ -80,6 +79,7 @@ public class MyLongTaskWithFragment extends AsyncTask<String,Integer,Integer> im
             Log.d(tag,"Dialog is not available to set callbacks");
             return;
         }
+
         dialog.setDialogFragmentCallbacks(this);
     }
 
@@ -89,8 +89,9 @@ public class MyLongTaskWithFragment extends AsyncTask<String,Integer,Integer> im
         if(dialog==null)
         {
             Log.d(tag,"Dialog is not available to set progress");
-            return;
+            return ;
         }
+
         dialog.setProgress(i);
     }
 
@@ -107,13 +108,14 @@ public class MyLongTaskWithFragment extends AsyncTask<String,Integer,Integer> im
         dialog.dismiss();
     }
 
+    private boolean bDoneFlag=false;
     protected void onPostExecute(Integer result)
     {
         bDoneFlag=true;
         Utils.logThreadSignature(this.tag);
         conditionalReportBack("onPostExecute result:"+result);
 
-        if(retainedFragment.isbUIReady())
+        if(isUIReady())
         {
             Log.d(tag,"UI is ready and running.dismiss is pemissible");
             closeProgressDialog();
@@ -128,7 +130,7 @@ public class MyLongTaskWithFragment extends AsyncTask<String,Integer,Integer> im
         Utils.logThreadSignature(this.tag);
         for (String s:strings)
         {
-            Log.d(tag,"Processing:"+s);
+            Log.d(tag,"Progressing:"+s);
         }
 
         for (int i=0;i<15;i++)
@@ -142,20 +144,36 @@ public class MyLongTaskWithFragment extends AsyncTask<String,Integer,Integer> im
 
     protected void reportThreadSignature()
     {
-        String s=Utils.getThreadSignature();
+        String s= Utils.getThreadSignature();
         conditionalReportBack(s);
     }
 
-
-    private void conditionalReportBack(String message)
+    public void onCancel(DialogInterface d)
     {
+        conditionalReportBack("Cancel Called");
+        this.cancel(true);
+    }
+
+    private void conditionalReportBack(String message) {
         Log.d(tag,message);
         r.reportBack(tag,message);
     }
 
-    public void onStart(Activity act)
+    public MonitoredActivityWithADOSupport getActivity()
     {
+        return retainedADOImpl.getActivity();
+    }
+
+    public void reset()
+    {
+        retainedADOImpl.reset();
+    }
+
+    public void attach(MonitoredActivityWithADOSupport act)
+    {
+        retainedADOImpl.attach(act);
         setCallbacksOnProgressDialog();
+
         if(bDoneFlag==true)
         {
             Log.d(tag,"On my start I notice I was done earlier");
@@ -163,42 +181,72 @@ public class MyLongTaskWithFragment extends AsyncTask<String,Integer,Integer> im
         }
     }
 
-    public void onCancel(DialogFragment df, DialogInterface di)
+    public void releaseContracts()
     {
-        Log.d(tag,"onCancel called");
+        retainedADOImpl.releaseContracts();
+    }
+
+
+    public boolean isActivityReady()
+    {
+        return retainedADOImpl.isActivityReady();
+    }
+
+    public void addChildRetainedADO(IRetainedADO childRetainedADO)
+    {
+        retainedADOImpl.addChildRetainedADO(childRetainedADO);
+    }
+
+    public boolean isUIReady()
+    {
+        return retainedADOImpl.isUIReady();
+    }
+
+    public boolean isConfigurationChanging()
+    {
+        return retainedADOImpl.isConfigurationChanging();
+    }
+
+
+    public void removeChildRetainedADO(IRetainedADO childRetainedADO)
+    {
+        retainedADOImpl.removeChildRetainedADO(childRetainedADO);
+    }
+
+    public void removeAllChildRetainedADOs()
+    {
+        retainedADOImpl.removeAllChildRetainedADOs();
+    }
+
+    public String getName()
+    {
+        return retainedADOImpl.getName();
+    }
+
+    public void detachFromParent()
+    {
+        retainedADOImpl.detachFromParent();
+    }
+
+    public void logStatus()
+    {
+        retainedADOImpl.logStatus();
+    }
+
+    public void addChildRetainedADOOnly(IRetainedADO childRetainedADO)
+    {
+        retainedADOImpl.addChildRetainedADOOnly(childRetainedADO);
+    }
+
+    public void onCancel(DialogFragment df,DialogInterface di)
+    {
+        Log.d(tag,"onCancel called.");
     }
 
     public void onDismiss(DialogFragment df,DialogInterface di)
     {
         Log.d(tag,"onDismiss called");
         Log.d(tag,"Remove myself from my parent");
-        detachFromParent();
-    }
-
-    IWorkerObjectClient client=null;
-    int workerObjectPassbackIdentifier=-1;
-    private void detachFromParent()
-    {
-        if(client==null)
-        {
-            Log.e(tag,"You have failed to register a client.");
-            return;
-        }
-
-        client.done(this,workerObjectPassbackIdentifier);
-    }
-
-    public void registerClient(IWorkerObjectClient woc,int inWorkerObjectPassbackIdentifier)
-    {
-        Log.d(tag,"Registering a client for the asynctask");
-        client=woc;
-        this.workerObjectPassbackIdentifier=inWorkerObjectPassbackIdentifier;
-    }
-
-    public void releaseResources()
-    {
-        Log.d(tag,"Cancelling the task called");
-        cancel(true);
         detachFromParent();
     }
 }

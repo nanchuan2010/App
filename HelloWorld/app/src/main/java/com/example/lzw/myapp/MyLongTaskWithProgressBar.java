@@ -6,6 +6,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 
+import com.example.lzw.myapp.AsyncTask.IWorkerObject;
+import com.example.lzw.myapp.AsyncTask.IWorkerObjectClient;
+import com.example.lzw.myapp.AsyncTask.MonitoredFragment;
 import com.example.lzw.myapp.Utils.Utils;
 
 /**

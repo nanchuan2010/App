@@ -21,7 +21,7 @@ public class TestAlarmsDriverActivity extends Activity implements IReportBack{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test_async_task_driver);
+        setContentView(R.layout.async_task_driver);
         alarmTester=new CancelRepeatingAlarmListener(this,this);
     }
 

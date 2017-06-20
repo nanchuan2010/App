@@ -71,39 +71,59 @@
             android:name=".Controls.MenusAndBarsActivity"
             android:label="@string/title_activity_menus_and_bars">
             <intent-filter>
-                <action android:name="android.intent.action.SEARCH"/>
+                <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
-            <meta-data android:name="android.app.searchable"
-                        android:resource="@xml/searchable" />
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
         </activity>
 
         <!--Fragments-->
-        <activity android:name=".Fragments.FragmentActivity"  android:label="Fragments"/>
-        <activity android:name=".Fragments.DetailsActivity" android:label="Titles"/>
+        <activity
+            android:name=".Fragments.FragmentActivity"
+            android:label="Fragments" />
+        <activity
+            android:name=".Fragments.DetailsActivity"
+            android:label="Titles" />
 
         <!--Dialogs-->
-        <activity android:name=".Dialogs.DialogActivity"  android:label="Dialogs"/>
+        <activity
+            android:name=".Dialogs.DialogActivity"
+            android:label="Dialogs" />
 
         <!--Preferences-->
-        <activity android:name=".Preferences.MainPreferenceActivity" android:label="Preferences">
+        <activity
+            android:name=".Preferences.MainPreferenceActivity"
+            android:label="Preferences">
             <intent-filter>
                 <action android:name="com.example.lzw.myapp.intent.action.MainPreference" />
             </intent-filter>
         </activity>
 
         <!--Handlers-->
-        <activity android:name=".Handlers.HandlersDriverActivity" android:label="Handlers" />
+        <activity
+            android:name=".Handlers.HandlersDriverActivity"
+            android:label="Handlers" />
 
         <!--Services-->
-        <activity android:name=".Services.GetAndPostActivity" android:label="Get &amp; Post" />
-        <activity android:name=".Services.ServiceActivity" android:label="Services" android:launchMode="singleTop" />
+        <activity
+            android:name=".Services.GetAndPostActivity"
+            android:label="Get &amp; Post" />
+        <activity
+            android:name=".Services.ServiceActivity"
+            android:label="Services"
+            android:launchMode="singleTop" />
+
         <service android:name=".Services.BackgroundService" />
         <service android:name=".Services.StockQuoteService">
             <intent-filter>
                 <action android:name="com.example.lzw.myapp.Services.IStockQuoteService" />
             </intent-filter>
         </service>
-        <activity android:name=".Services.StockQuoteClient" android:label="Stock Quote Client" />
+
+        <activity
+            android:name=".Services.StockQuoteClient"
+            android:label="Stock Quote Client" />
         <service android:name=".Services.StockQuoteService2">
             <intent-filter>
                 <action android:name="com.example.lzw.myapp.Services.IStockQuoteService2" />
@@ -111,26 +131,29 @@
         </service>
         <activity
             android:name=".Services.MessengerClient"
-            android:label="Messenger &amp; Handler">
-        </activity>
+            android:label="Messenger &amp; Handler"></activity>
         <service android:name=".Services.MessengerService">
             <intent-filter>
-                <action android:name="com.example.lzw.myapp.Services.MessengerService"/>
+                <action android:name="com.example.lzw.myapp.Services.MessengerService" />
             </intent-filter>
         </service>
 
+        <!---->
+        <activity
+            android:name=".AsyncTask.TestAsyncTaskDriverActivity"
+            android:label="Async Task" />
 
         <activity
             android:name=".SearchResultsActivity"
             android:configChanges="orientation|keyboardHidden"
             android:label="Search Results">
             <intent-filter>
-                <action android:name="android.intent.action.SEARCH"/>
+                <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
-            <meta-data android:name="android.app.searchable"
+            <meta-data
+                android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
         </activity>
-
 
 
         <receiver android:name=".Broadcast.TestReceiver">
