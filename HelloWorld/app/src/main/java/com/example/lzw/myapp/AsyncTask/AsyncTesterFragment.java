@@ -7,8 +7,6 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.example.lzw.myapp.MonitoredActivityWithADOSupport;
-
 /**
  * Created by LZW on 2017/05/31.
  */

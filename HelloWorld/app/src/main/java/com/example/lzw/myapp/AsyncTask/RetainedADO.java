@@ -3,8 +3,6 @@ package com.example.lzw.myapp.AsyncTask;
 import android.app.Activity;
 import android.util.Log;
 
-import com.example.lzw.myapp.MonitoredActivityWithADOSupport;
-
 import java.util.ArrayList;
 
 /**

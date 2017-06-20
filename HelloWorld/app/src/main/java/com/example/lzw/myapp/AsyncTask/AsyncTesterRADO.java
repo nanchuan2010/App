@@ -1,4 +1,4 @@
-package com.example.lzw.myapp.AsyncTask.;
+package com.example.lzw.myapp.AsyncTask;
 
 import android.app.Activity;
 
@@ -17,7 +17,7 @@ public class AsyncTesterRADO extends BaseTesterRADO {
     public void testFragmentProgressDialog()
     {
         logStatus();
-        MyLongTaskWithRADO longTaskWithFragmentDialog3=new MyLongTaskWithRADO(this,this,"Task With Dialogs");
-        longTaskWithFragmentDialog3.execute("String1","String2","String3");
+        MyLongTaskWithRADO longTaskWithFragmentDialog=new MyLongTaskWithRADO(this,this,"Task With Dialogs");
+        longTaskWithFragmentDialog.execute("String1","String2","String3");
     }
 }

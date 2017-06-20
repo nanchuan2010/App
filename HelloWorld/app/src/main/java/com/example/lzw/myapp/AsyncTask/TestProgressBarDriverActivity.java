@@ -7,22 +7,27 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.lzw.myapp.AsyncTask.AsyncTesterFragment;
+import com.example.lzw.myapp.AsyncTask.AsyncTesterRADO;
+import com.example.lzw.myapp.AsyncTask.MonitoredActivityWithADOSupport;
+import com.example.lzw.myapp.AsyncTask.RetainedADO;
 import com.example.lzw.myapp.IReportBack;
 import com.example.lzw.myapp.R;
 
 /**
  * Created by LZW on 2017/05/31.
  */
-public class TestAsync2TaskDriverActivity extends MonitoredActivityWithADOSupport implements IReportBack,View.OnClickListener {
-    public static final String tag = "AsyncTaskDriverActivity";
-
+public class TestProgressBarDriverActivity extends MonitoredActivityWithADOSupport implements IReportBack,View.OnClickListener {
+    public static final String tag = "TestProgressBarDriverActivity";
     AsyncTesterRADO asyncTester = null;
+
     AsyncTesterFragment asyncTesterFragment = null;
 
-    public TestAsync2TaskDriverActivity() {
+    public TestProgressBarDriverActivity() {
         super(tag);
     }
 
@@ -40,19 +45,16 @@ public class TestAsync2TaskDriverActivity extends MonitoredActivityWithADOSuppor
         super.onCreate(savedInstanceState);
         asyncTester = getAsyncTester();
         asyncTesterFragment = AsyncTesterFragment.establishRetainedAsyncTesterFragment(this);
-        setContentView(R.layout.async_task_driver);
+        setContentView(R.layout.async_progressbar_activity);
+        ProgressBar pb = (ProgressBar) findViewById(R.id.tpb_progressBar1);
+        pb.setSaveEnabled(true);
 
-        Button btn=(Button)findViewById(R.id.btnAsyncTask1);
-        btn.setText("Fragment Progress");
+        Button btn=(Button)findViewById(R.id.btnStart);
         btn.setOnClickListener(this);
 
-        btn=(Button)findViewById(R.id.btnAsyncTask2);
-        btn.setVisibility(View.GONE);
-
-        btn=(Button)findViewById(R.id.btnAsyncTask3);
-        btn.setVisibility(View.GONE);
+        btn=(Button)findViewById(R.id.btnClear);
+        btn.setOnClickListener(this);
     }
-
 
     private void appendMenuItemText(MenuItem menuItem) {
         String title = menuItem.getTitle().toString();
@@ -68,7 +70,7 @@ public class TestAsync2TaskDriverActivity extends MonitoredActivityWithADOSuppor
     private void appendText(String s) {
         TextView tv = getTextView();
         tv.setText(tv.getText() + "\n" + s);
-        Log.d(tag, s);
+        //Log.d(tag,s);
     }
 
     @Override
@@ -87,15 +89,18 @@ public class TestAsync2TaskDriverActivity extends MonitoredActivityWithADOSuppor
     }
 
     public TextView getTextView() {
-        return (TextView) this.findViewById(R.id.text1);
+        return (TextView) this.findViewById(R.id.tpb_text1);
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId())
         {
-            case R.id.btnAsyncTask1:
-                asyncTester.testFragmentProgressDialog();
+            case R.id.btnStart:
+                asyncTesterFragment.testFragmentProgressDialog();
+                break;
+            case R.id.btnClear:
+                this.emptyText();
                 break;
         }
     }

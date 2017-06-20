@@ -8,12 +8,11 @@ import android.content.Intent;
  * Created by LZW on 2017/06/01.
  */
 public abstract class ALongRunningNonStickyBroadcastService extends IntentService {
-    public static String tag="ALongRunningBroadcastService";
+    public static String tag = "ALongRunningBroadcastService";
 
     protected abstract void handleBroadcastIntent(Intent broadcastIntent);
 
-    public ALongRunningNonStickyBroadcastService(String name)
-    {
+    public ALongRunningNonStickyBroadcastService(String name) {
         super(name);
     }
 
@@ -33,12 +32,10 @@ public abstract class ALongRunningNonStickyBroadcastService extends IntentServic
 
     @Override
     protected void onHandleIntent(Intent intent) {
-        try
-        {
-            Intent broadcastIntent=intent.getParcelableExtra("original_intent");
+        try {
+            Intent broadcastIntent = intent.getParcelableExtra("original_intent");
             handleBroadcastIntent(broadcastIntent);
-        }
-        finally {
+        } finally {
             LightedGreenRoom.s_leave();
         }
     }

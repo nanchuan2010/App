@@ -143,14 +143,14 @@ public class AudioPlayActivity extends Activity implements MediaPlayer.OnPrepare
         Intent intent=null;
         switch (item.getItemId())
         {
-            case R.id.menu_test_async2:
+           /* case R.id.menu_test_async2:
                 intent=new Intent(this,SoundPoolActivity.class);
                 this.startActivity(intent);
                 break;
             case R.id.menu_test_async3:
                 intent=new Intent(this,VideoPlayActivity.class);
                 this.startActivity(intent);
-                break;
+                break;*/
         }
 
         return true;

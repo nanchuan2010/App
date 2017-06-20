@@ -1,8 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:id="@+id/menuGroup_Main">
-        <item android:id="@+id/menu_test_async1" android:title="Test Async 1"></item>
-        <item android:id="@+id/menu_test_async2" android:title="Test Async 2"></item>
-        <item android:id="@+id/menu_test_async3" android:title="Test Async 3"></item>
-        <item android:id="@+id/menu_clear" android:title="clear"></item>
+        <item android:id="@+id/menu_retained" android:title="Retained Fragment"></item>
+        <item android:id="@+id/menu_progressbar" android:title="ProgressBar" />
     </group>
 </menu>

@@ -8,7 +8,6 @@ import android.util.Log;
 
 import com.example.lzw.myapp.IFragmentDialogCallbacks;
 import com.example.lzw.myapp.IReportBack;
-import com.example.lzw.myapp.MonitoredActivityWithADOSupport;
 import com.example.lzw.myapp.Utils.Utils;
 
 /**

@@ -41,11 +41,11 @@ public class WhereAmIActivity extends FragmentActivity  {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId()==R.id.menu_test_async1)
+      /*  if(item.getItemId()==R.id.menu_test_async1)
         {
             myMapFrag=MyMarkerFragment.newInstance();
             getSupportFragmentManager().beginTransaction().add(R.id.container,myMapFrag,MAPFRAGTAG).commit();
-        }
+        }*/
         return true;
     }
 }

@@ -1,4 +1,4 @@
-package com.example.lzw.myapp;
+package com.example.lzw.myapp.AsyncTask;
 
 import android.app.Activity;
 import android.os.AsyncTask;
@@ -9,6 +9,8 @@ import android.widget.ProgressBar;
 import com.example.lzw.myapp.AsyncTask.IWorkerObject;
 import com.example.lzw.myapp.AsyncTask.IWorkerObjectClient;
 import com.example.lzw.myapp.AsyncTask.MonitoredFragment;
+import com.example.lzw.myapp.IReportBack;
+import com.example.lzw.myapp.R;
 import com.example.lzw.myapp.Utils.Utils;
 
 /**

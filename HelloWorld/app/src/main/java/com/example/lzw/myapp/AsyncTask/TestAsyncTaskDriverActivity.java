@@ -1,18 +1,21 @@
 package com.example.lzw.myapp.AsyncTask;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.lzw.myapp.IReportBack;
 import com.example.lzw.myapp.R;
 
-public class TestAsyncTaskDriverActivity extends Activity implements IReportBack {
+public class TestAsyncTaskDriverActivity extends Activity implements IReportBack, View.OnClickListener {
 
     public static final String tag = "AsyncTaskDriverActivity";
 
@@ -24,6 +27,17 @@ public class TestAsyncTaskDriverActivity extends Activity implements IReportBack
         setContentView(R.layout.async_task_driver);
 
         asyncTester = new AsyncTester(this, this);
+        Button btn = (Button) findViewById(R.id.btnAsyncTask1);
+        btn.setOnClickListener(this);
+
+        btn = (Button) findViewById(R.id.btnAsyncTask2);
+        btn.setOnClickListener(this);
+
+        btn = (Button) findViewById(R.id.btnAsyncTask3);
+        btn.setOnClickListener(this);
+
+        btn=(Button)findViewById(R.id.btnClear);
+        btn.setOnClickListener(this);
     }
 
     @Override
@@ -38,24 +52,17 @@ public class TestAsyncTaskDriverActivity extends Activity implements IReportBack
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        appendMenuItemText(item);
-        if (item.getItemId() == R.id.menu_clear) {
-            this.emptyText();
+        Intent intent = new Intent();
+        if (item.getItemId() == R.id.menu_retained) {
+            intent = new Intent(this, TestAsync2TaskDriverActivity.class);
+            startActivity(intent);
             return true;
         }
-        if (item.getItemId() == R.id.menu_test_async1) {
-            asyncTester.test1();
+        if (item.getItemId() == R.id.menu_progressbar) {
+            intent = new Intent(this, TestProgressBarDriverActivity.class);
+            startActivity(intent);
             return true;
         }
-        if (item.getItemId() == R.id.menu_test_async2) {
-            asyncTester.test2();
-            return true;
-        }
-        if (item.getItemId() == R.id.menu_test_async3) {
-            asyncTester.test3();
-            return true;
-        }
-
         return true;
     }
 
@@ -95,4 +102,22 @@ public class TestAsyncTaskDriverActivity extends Activity implements IReportBack
         return (TextView) this.findViewById(R.id.text1);
     }
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btnClear:
+                this.emptyText();
+                break;
+            case R.id.btnAsyncTask1:
+                asyncTester.test1();
+                break;
+            case R.id.btnAsyncTask2:
+                asyncTester.test2();
+                break;
+            case R.id.btnAsyncTask3:
+                asyncTester.test3();
+                break;
+        }
+    }
 }
+

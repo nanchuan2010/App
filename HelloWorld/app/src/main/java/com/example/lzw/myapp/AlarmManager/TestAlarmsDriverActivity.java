@@ -42,7 +42,7 @@ public class TestAlarmsDriverActivity extends Activity implements IReportBack{
             this.emptyText();
             return true;
         }
-        if(item.getItemId()==R.id.menu_test_async1)
+      /*  if(item.getItemId()==R.id.menu_test_async1)
         {
             alarmTester.sendAlarmOnce();
             return true;
@@ -56,7 +56,7 @@ public class TestAlarmsDriverActivity extends Activity implements IReportBack{
         {
             alarmTester.cancelRepeatingAlarm();
             return true;
-        }
+        }*/
         return true;
     }
 
