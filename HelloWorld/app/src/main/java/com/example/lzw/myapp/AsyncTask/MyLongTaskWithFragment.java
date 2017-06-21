@@ -6,7 +6,6 @@ import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.example.lzw.myapp.IFragmentDialogCallbacks;
 import com.example.lzw.myapp.IReportBack;
 import com.example.lzw.myapp.Utils.Utils;
 

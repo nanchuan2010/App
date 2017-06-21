@@ -7,8 +7,6 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.example.lzw.myapp.IFragmentDialogCallbacks;
-
 /**
  * Created by LZW on 2017/05/31.
  */

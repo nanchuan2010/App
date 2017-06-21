@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.lzw.myapp.AlarmManager.AlarmManagerDriverActivity;
 import com.example.lzw.myapp.Architecture.CalculatorActivity;
 import com.example.lzw.myapp.AsyncTask.TestAsyncTaskDriverActivity;
 import com.example.lzw.myapp.Broadcast.BroadcastActivity;
@@ -44,6 +45,7 @@ public class MainActivity extends Activity {
         map.put("Services",new GetAndPostActivity());
         map.put("Async Task",new TestAsyncTaskDriverActivity());
         map.put("Broadcast",new BroadcastActivity());
+        map.put("Alarm Manager",new AlarmManagerDriverActivity());
 
         //String[] listItems=new String[]{"Architecture","AlarmManager","Animation","Loader","Contacts"};
         String[] listItems=new String[map.size()];

@@ -3,61 +3,41 @@ package com.example.lzw.myapp.AlarmManager;
 import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.lzw.myapp.IReportBack;
 import com.example.lzw.myapp.R;
 
-public class TestAlarmsDriverActivity extends Activity implements IReportBack{
+public class AlarmManagerDriverActivity extends Activity implements IReportBack,View.OnClickListener{
 
-    public static final String tag="TestAlarmsDriverActivity";
+    public static final String tag="AlarmManagerDriverActivity";
 
-    private CancelRepeatingAlarmListener alarmTester=null;
+    private CancelRepeatingAlarm alarmTester=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.async_task_driver);
-        alarmTester=new CancelRepeatingAlarmListener(this,this);
-    }
+        alarmTester=new CancelRepeatingAlarm(this,this);
 
-    public boolean onCreateOptionsMenu(Menu menu) {
-        super.onCreateOptionsMenu(menu);
-        MenuInflater inflater=getMenuInflater();
-        inflater.inflate(R.menu.async_task_menu,menu);
-        return true;
+        Button btn=(Button)findViewById(R.id.btnAsyncTask1);
+        btn.setText("Send Once Alarm");
+        btn.setOnClickListener(this);
 
-    }
+        btn=(Button)findViewById(R.id.btnAsyncTask2);
+        btn.setText("Send Repeat Alarm");
+        btn.setOnClickListener(this);
 
+        btn=(Button)findViewById(R.id.btnAsyncTask3);
+        btn.setText("Send Cancel Alarm");
+        btn.setOnClickListener(this);
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        appendMenuItemText(item);
-        if(item.getItemId()==R.id.menu_clear)
-        {
-            this.emptyText();
-            return true;
-        }
-      /*  if(item.getItemId()==R.id.menu_test_async1)
-        {
-            alarmTester.sendAlarmOnce();
-            return true;
-        }
-        if(item.getItemId()==R.id.menu_test_async2)
-        {
-            alarmTester.sendRepeatingAlarm();
-            return true;
-        }
-        if(item.getItemId()==R.id.menu_test_async3)
-        {
-            alarmTester.cancelRepeatingAlarm();
-            return true;
-        }*/
-        return true;
+        btn=(Button)findViewById(R.id.btnClear);
+        btn.setOnClickListener(this);
     }
 
     private void appendMenuItemText(MenuItem menuItem)
@@ -99,4 +79,22 @@ public class TestAlarmsDriverActivity extends Activity implements IReportBack{
         return (TextView)this.findViewById(R.id.text1);
     }
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId())
+        {
+            case R.id.btnAsyncTask1:
+                alarmTester.sendAlarmOnce();
+                break;
+            case R.id.btnAsyncTask2:
+                alarmTester.sendRepeatingAlarm();
+                break;
+            case R.id.btnAsyncTask3:
+                alarmTester.cancelRepeatingAlarm();
+                break;
+            case R.id.btnClear:
+                this.emptyText();
+                break;
+        }
+    }
 }

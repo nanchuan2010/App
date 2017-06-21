@@ -15,7 +15,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <uses-configuration android:reqTouchScreen="finger" />
 
@@ -143,10 +143,12 @@
         <activity
             android:name=".AsyncTask.TestAsyncTaskDriverActivity"
             android:label="Async Task" />
-        <activity android:name=".AsyncTask.TestAsync2TaskDriverActivity"
-            android:label="Retained Fragment"/>
-        <activity android:name=".AsyncTask.TestProgressBarDriverActivity"
-            android:label="ProgressBar"/>
+        <activity
+            android:name=".AsyncTask.TestAsync2TaskDriverActivity"
+            android:label="Retained Fragment" />
+        <activity
+            android:name=".AsyncTask.TestProgressBarDriverActivity"
+            android:label="ProgressBar" />
 
         <!--Broadcast-->
         <receiver android:name=".Broadcast.SimpleReceiver">
@@ -154,8 +156,10 @@
                 <action android:name="com.example.lzw.myapp.testbc" />
             </intent-filter>
         </receiver>
-        <activity android:name=".Broadcast.BroadcastActivity"
-            android:label="Broadcast"/>
+        <activity
+            android:name=".Broadcast.BroadcastActivity"
+            android:label="Broadcast" />
+
         <receiver android:name=".Broadcast.MultipleReceivers">
             <intent-filter>
                 <action android:name="com.example.lzw.myapp.testbc" />
@@ -171,46 +175,53 @@
                 <action android:name="com.androidbook.intents.testbc" />
             </intent-filter>
         </receiver>
+
         <service android:name=".Broadcast.Test60SecBCRService" />
 
-
-<!--        <activity
-            android:name=".SearchResultsActivity"
-            android:configChanges="orientation|keyboardHidden"
-            android:label="Search Results">
-            <intent-filter>
-                <action android:name="android.intent.action.SEARCH" />
-            </intent-filter>
-            <meta-data
-                android:name="android.app.searchable"
-                android:resource="@xml/searchable" />
-        </activity>
-
-
-
-
-
-        <receiver android:name=".AlarmManager.TestReceiver" />
-
-
-
-        <receiver android:name=".HomeScreenWidget.BDayWidgetProvider">
-            <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@xml/bday_appwidget_provider" />
-
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-            </intent-filter>
-        </receiver>
-
+        <!--Alarm Manager-->
+        <receiver android:name=".AlarmManager.AlarmReceiver" />
         <activity
-            android:name=".HomeScreenWidget.ConfigureBDayWidgetActivity"
-            android:label="Configure Birthday Widget">
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
-            </intent-filter>
-        </activity>-->
+            android:name=".AlarmManager.AlarmManagerDriverActivity"
+            android:label="Alarm Manager" />
+
+
+        <!--        <activity
+                    android:name=".SearchResultsActivity"
+                    android:configChanges="orientation|keyboardHidden"
+                    android:label="Search Results">
+                    <intent-filter>
+                        <action android:name="android.intent.action.SEARCH" />
+                    </intent-filter>
+                    <meta-data
+                        android:name="android.app.searchable"
+                        android:resource="@xml/searchable" />
+                </activity>
+
+
+
+
+
+
+
+
+
+                <receiver android:name=".HomeScreenWidget.BDayWidgetProvider">
+                    <meta-data
+                        android:name="android.appwidget.provider"
+                        android:resource="@xml/bday_appwidget_provider" />
+
+                    <intent-filter>
+                        <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                    </intent-filter>
+                </receiver>
+
+                <activity
+                    android:name=".HomeScreenWidget.ConfigureBDayWidgetActivity"
+                    android:label="Configure Birthday Widget">
+                    <intent-filter>
+                        <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+                    </intent-filter>
+                </activity>-->
 
         <!--
             <activity
@@ -224,12 +235,12 @@
         </activity>
         -->
 
-<!--        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
-        <meta-data
-            android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyCUoYoYO8MStymSxJ6jGDzBpcD1k0pnJDE" />-->
+        <!--        <meta-data
+                    android:name="com.google.android.gms.version"
+                    android:value="@integer/google_play_services_version" />
+                <meta-data
+                    android:name="com.google.android.maps.v2.API_KEY"
+                    android:value="AIzaSyCUoYoYO8MStymSxJ6jGDzBpcD1k0pnJDE" />-->
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -249,12 +260,12 @@
             android:name=".Media.AudioPlayActivity"
             android:label="@string/title_activity_audio_play"></activity>
         -->
-<!--        <activity
-            android:name=".Media.SoundPoolActivity"
-            android:label="@string/title_activity_sound_pool" />
-        <activity
-            android:name=".Media.VideoPlayActivity"
-            android:label="@string/title_activity_video_play" />-->
+        <!--        <activity
+                    android:name=".Media.SoundPoolActivity"
+                    android:label="@string/title_activity_sound_pool" />
+                <activity
+                    android:name=".Media.VideoPlayActivity"
+                    android:label="@string/title_activity_video_play" />-->
         <!--
             <activity
             android:name=".HomeScreenWidget.ConfigureBDayWidgetActivity"
@@ -290,16 +301,16 @@
             android:name=".Sensor.GravitySensorActivity"
             android:label="@string/title_activity_gravity_sensor"></activity>
         -->
-<!--        <activity
-            android:name=".Provider.ContentProviderTestActivity"
-            android:label="ContentProviderTestActivity" />
-        <activity
-            android:name=".Provider.directaccess.DirectSQLitePersistenceTestActivity"
-            android:label="@string/title_activity_gravity_sensor" />
+        <!--        <activity
+                    android:name=".Provider.ContentProviderTestActivity"
+                    android:label="ContentProviderTestActivity" />
+                <activity
+                    android:name=".Provider.directaccess.DirectSQLitePersistenceTestActivity"
+                    android:label="@string/title_activity_gravity_sensor" />
 
-        <provider
-            android:name=".Provider.BookProvider"
-            android:authorities="com.example.lzw.myapp.Provider.BookProvider" />-->
+                <provider
+                    android:name=".Provider.BookProvider"
+                    android:authorities="com.example.lzw.myapp.Provider.BookProvider" />-->
         <!--
         <activity
             android:name=".Loader.TestLoadersActivity"
