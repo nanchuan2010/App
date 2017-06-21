@@ -8,24 +8,42 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.FragmentActivity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.lzw.myapp.R;
+import com.google.android.gms.maps.model.LatLng;
 
 /**
  * Created by Administrator on 2017/6/4.
  */
 
-public class LocationUpdateDemoActivity extends Activity {
+public class LocationUpdateActivity extends FragmentActivity {
     LocationManager locMgr = null;
     LocationListener locListener = null;
+    MyMapFragment myMapFrag=null;
+    private static final String MAPFRAGTAG="LOCATIONUPDATETAG";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_where_am_i);
+        setContentView(R.layout.maps_where_am_i);
+
+        Button btn=(Button)findViewById(R.id.btnAddMarker);
+        btn.setVisibility(View.GONE);
+
+        EditText et=(EditText)findViewById(R.id.locationName);
+        et.setVisibility(View.GONE);
+
+        if((myMapFrag=(MyMapFragment) getSupportFragmentManager().findFragmentByTag(MAPFRAGTAG))==null)
+        {
+            myMapFrag=MyMapFragment.newInstance();
+            getSupportFragmentManager().beginTransaction().add(R.id.container,myMapFrag,MAPFRAGTAG).commit();
+        }
 
         locMgr = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         locListener = new LocationListener() {
@@ -34,6 +52,8 @@ public class LocationUpdateDemoActivity extends Activity {
                 if (location != null) {
                     Toast.makeText(getBaseContext(), "New location latitude [" + location.getLatitude()
                             + "] longitude [" + location.getLongitude() + "]", Toast.LENGTH_SHORT).show();
+                    LatLng latLng=new LatLng(location.getLatitude(),location.getLongitude());
+                    myMapFrag.gotoLocation(latLng,"My Position");
                 }
             }
 

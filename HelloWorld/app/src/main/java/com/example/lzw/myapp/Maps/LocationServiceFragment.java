@@ -27,16 +27,14 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class LocationServiceFragment extends SupportMapFragment
         implements GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
-        OnMapReadyCallback
-{
-    private Context mContext=null;
-    private GoogleMap mMap=null;
-    private GoogleApiClient mClient=null;
-    private LatLng mLatLng=null;
+        OnMapReadyCallback {
+    private Context mContext = null;
+    private GoogleMap mMap = null;
+    private GoogleApiClient mClient = null;
+    private LatLng mLatLng = null;
 
-    public static LocationServiceFragment newInstance()
-    {
-        LocationServiceFragment myMF=new LocationServiceFragment();
+    public static LocationServiceFragment newInstance() {
+        LocationServiceFragment myMF = new LocationServiceFragment();
         return myMF;
     }
 
@@ -49,52 +47,50 @@ public class LocationServiceFragment extends SupportMapFragment
     @Override
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
-        if(mClient==null)
+        if (mClient == null)
             setRetainInstance(true);
-            mContext=getActivity().getApplication();
-            mClient=new GoogleApiClient.Builder(mContext,this,this).addApi(LocationServices.API).build();
-            mClient.connect();
+        mContext = getActivity().getApplication();
+        mClient = new GoogleApiClient.Builder(mContext, this, this).addApi(LocationServices.API).build();
+        mClient.connect();
     }
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-        Toast.makeText(mContext,"Connection failed",Toast.LENGTH_LONG).show();
+        Toast.makeText(mContext, "Connection failed", Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {
-        FusedLocationProviderApi locator=LocationServices.FusedLocationApi;
-        Location myLocation=locator.getLastLocation(mClient);
-        if(myLocation==null)
+        FusedLocationProviderApi locator = LocationServices.FusedLocationApi;
+        Location myLocation = locator.getLastLocation(mClient);
+        if (myLocation == null)
             return;
-        double lat=myLocation.getLatitude();
-        double lng=myLocation.getLongitude();
-        mLatLng=new LatLng(lat,lng);
+        double lat = myLocation.getLatitude();
+        double lng = myLocation.getLongitude();
+        mLatLng = new LatLng(lat, lng);
         doWhenEverythingIsReady();
     }
 
     @Override
     public void onConnectionSuspended(int i) {
-        Toast.makeText(mContext,"Connection suspended",Toast.LENGTH_LONG).show();
+        Toast.makeText(mContext, "Connection suspended", Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        mMap=googleMap;
+        mMap = googleMap;
         doWhenEverythingIsReady();
     }
 
-    private void doWhenEverythingIsReady()
-    {
-        if(mMap==null || mLatLng==null)
-        {
+    private void doWhenEverythingIsReady() {
+        if (mMap == null || mLatLng == null) {
             return;
         }
 
-        MarkerOptions markerOpt=new MarkerOptions().draggable(false).flat(true)
+        MarkerOptions markerOpt = new MarkerOptions().draggable(false).flat(true)
                 .position(mLatLng).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
         mMap.addMarker(markerOpt);
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mLatLng,15));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mLatLng, 15));
     }
 }

@@ -1,10 +1,13 @@
 package com.example.lzw.myapp.Animation;
 
+import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.app.Activity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -17,8 +20,39 @@ public class FrameAnimationActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.frame_animations_layout);
+        setContentView(R.layout.animation_frame_layout);
         this.setupButton();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.animation_layout,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent=new Intent();
+        switch (item.getItemId())
+        {
+            case R.id.menu_layout:
+                intent.setClass(this,LayoutAnimationActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.menu_view:
+                intent.setClass(this,ViewAnimationActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.menu_property:
+                intent.setClass(this,PropertyAnimationActivity.class);
+                startActivity(intent);
+                break;
+        }
+
+        return true;
+
     }
 
     private void setupButton()

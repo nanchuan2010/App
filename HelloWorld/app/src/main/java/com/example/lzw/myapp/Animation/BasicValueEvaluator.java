@@ -7,8 +7,8 @@ import android.util.Log;
 /**
  * Created by LZW on 2017/06/02.
  */
-public class TestBasicValueEvaluator {
-    private String tag="TestBasicValueEvaluator";
+public class BasicValueEvaluator {
+    private String tag="BasicValueEvaluator";
     public void test()
     {
         Log.d(tag,"Setting up the evaluator");

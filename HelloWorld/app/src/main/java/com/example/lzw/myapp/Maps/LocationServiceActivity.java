@@ -4,11 +4,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.app.Activity;
 import android.provider.Settings;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.text.TextUtils;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.lzw.myapp.R;
@@ -23,7 +24,13 @@ public class LocationServiceActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_where_am_i);
+        setContentView(R.layout.maps_where_am_i);
+
+        Button btn=(Button)findViewById(R.id.btnAddMarker);
+        btn.setVisibility(View.GONE);
+
+        EditText et=(EditText)findViewById(R.id.locationName);
+        et.setVisibility(View.GONE);
 
         if((myMapFrag=(LocationServiceFragment) getSupportFragmentManager().findFragmentByTag(MAPFRAGTAG))==null)
         {

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/menuMaps">
+        <item android:id="@+id/menu_location_service" android:title="Location Service"/>
+        <item android:id="@+id/menu_location_update" android:title="Location Update"/>
+    </group>
+</menu>
