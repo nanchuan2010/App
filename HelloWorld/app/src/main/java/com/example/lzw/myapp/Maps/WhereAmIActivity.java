@@ -110,6 +110,10 @@ public class WhereAmIActivity extends FragmentActivity {
                 intent.setClass(this,LocationUpdateActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.menu_fused_location:
+                intent.setClass(this,FusedLocationActivity.class);
+                startActivity(intent);
+                break;
         }
         return true;
     }

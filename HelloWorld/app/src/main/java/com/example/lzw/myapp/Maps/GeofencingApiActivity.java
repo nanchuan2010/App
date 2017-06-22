@@ -42,7 +42,7 @@ public class GeofencingApiActivity extends FragmentActivity
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fused_location);
+        setContentView(R.layout.maps_fused_location);
 
         final float radius = 0.5f * 1609.0f;
 

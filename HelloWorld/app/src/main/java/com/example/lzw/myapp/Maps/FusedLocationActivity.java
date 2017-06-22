@@ -9,38 +9,28 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.os.CancellationSignal;
-import android.support.v4.view.MenuItemCompat;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.lzw.myapp.R;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
-import com.google.android.gms.common.api.Api;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.PendingResult;
-import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.FusedLocationProviderApi;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
-
-import java.io.FileDescriptor;
-import java.io.PrintWriter;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Administrator on 2017/6/4.
@@ -73,7 +63,7 @@ public class FusedLocationActivity extends FragmentActivity
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fused_location);
+        setContentView(R.layout.maps_fused_location);
         locReq = LocationRequest.create().setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY).setInterval(10000).setFastestInterval(5000);
         client = new GoogleApiClient.Builder(this, this, this).addApi(LocationServices.API).build();
         modeStr = (TextView) findViewById(R.id.mode);
@@ -234,30 +224,23 @@ public class FusedLocationActivity extends FragmentActivity
         finish();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        super.onCreateOptionsMenu(menu);
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.fused_location_menu, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.menu_no_power:
+
+    public void doClick(View view) {
+        switch (view.getId()) {
+            case R.id.btnNoPower:
                 locReq.setPriority(LocationRequest.PRIORITY_NO_POWER);
                 priorityStr.setText("Current priority is NO_POWER");
                 break;
-            case R.id.menu_low_power:
+            case R.id.btnLowPower:
                 locReq.setPriority(LocationRequest.PRIORITY_LOW_POWER);
                 priorityStr.setText("Current priority is LOW_POWER");
                 break;
-            case R.id.menu_balanced:
+            case R.id.btnBalanced:
                 locReq.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
                 priorityStr.setText("Current priority is BALANCED");
                 break;
-            case R.id.menu_high:
+            case R.id.btnHighAccuracy:
                 locReq.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
                 priorityStr.setText("Current priority is HIGH_ACCURACY");
                 break;
@@ -272,6 +255,6 @@ public class FusedLocationActivity extends FragmentActivity
             locator.requestLocationUpdates(client, locReq, this);
         }
 
-        return true;
+        startActivityForResult(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS), LOCATION_SETTINGS_REQUEST);
     }
 }

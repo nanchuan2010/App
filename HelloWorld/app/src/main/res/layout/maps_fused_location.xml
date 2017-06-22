@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.lzw.myapp.Maps.FusedLocationActivity"
+    tools:ignore="MergeRootFrame">
+
+    <Button
+        android:id="@+id/btnNoPower"
+        android:text="NO POWER"
+        android:onClick="doClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btnLowPower"
+        android:text="LOW POWER"
+        android:onClick="doClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btnBalanced"
+        android:text="BALANCED"
+        android:onClick="doClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btnHighAccuracy"
+        android:text="HIGH ACCURACY"
+        android:onClick="doClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/mode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Current mode is" />
+
+    <TextView
+        android:id="@+id/priority"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Current priority is BALANCED" />
+</LinearLayout>
