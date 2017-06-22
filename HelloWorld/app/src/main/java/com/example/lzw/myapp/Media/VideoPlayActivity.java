@@ -3,8 +3,6 @@ package com.example.lzw.myapp.Media;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
-import android.os.Environment;
-import android.view.ViewDebug;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
@@ -16,7 +14,7 @@ public class VideoPlayActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_video_play);
+        setContentView(R.layout.media_video_play);
 
         VideoView videoView=(VideoView)this.findViewById(R.id.videoView);
         MediaController mc=new MediaController(this);

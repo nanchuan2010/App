@@ -9,28 +9,39 @@
 
     <Button
         android:id="@+id/btnNoPower"
-        android:text="NO POWER"
-        android:onClick="doClick"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:onClick="doClick"
+        android:text="NO POWER" />
+
     <Button
         android:id="@+id/btnLowPower"
-        android:text="LOW POWER"
-        android:onClick="doClick"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:onClick="doClick"
+        android:text="LOW POWER" />
+
     <Button
         android:id="@+id/btnBalanced"
-        android:text="BALANCED"
-        android:onClick="doClick"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:onClick="doClick"
+        android:text="BALANCED" />
+
     <Button
         android:id="@+id/btnHighAccuracy"
-        android:text="HIGH ACCURACY"
-        android:onClick="doClick"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:onClick="doClick"
+        android:text="HIGH ACCURACY" />
+
+    <Button
+        android:id="@+id/btnLocationSetting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="doClick"
+        android:text="Location Setting" />
+
     <TextView
         android:id="@+id/mode"
         android:layout_width="match_parent"

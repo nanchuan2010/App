@@ -32,12 +32,12 @@ public class GeofencingApiActivity extends FragmentActivity
         implements GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
         ResultCallback<Status> {
+
     private static final String TAG = "GeofencingApiDemo";
     private GoogleApiClient mClient = null;
     private GeofencingApi mFencer = LocationServices.GeofencingApi;
     private List<Geofence> mGeofences = new ArrayList<Geofence>();
     private PendingIntent pIntent = null;
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -87,23 +87,23 @@ public class GeofencingApiActivity extends FragmentActivity
 
     @Override
     public void onResult(@NonNull Status status) {
-        Log.v(TAG,"Got a result from addGeofences ("+status.getStatusCode()+"):"+status.getStatus().getStatusMessage());
+        Log.v(TAG, "Got a result from addGeofences (" + status.getStatusCode() + "):" + status.getStatus().getStatusMessage());
     }
 
     @Override
     public void onConnectionSuspended(int i) {
-        Log.v(TAG,"Connection suspended");
+        Log.v(TAG, "Connection suspended");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.v(TAG,"Resuming activity");
+        Log.v(TAG, "Resuming activity");
         tryToConnect();
     }
 
     private void tryToConnect() {
-        if(mClient.isConnected())
+        if (mClient.isConnected())
             return;
 
         mClient.connect();
@@ -113,14 +113,13 @@ public class GeofencingApiActivity extends FragmentActivity
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.v(TAG,"Destroying activity,GoogleApiClient...");
-        if(mClient.isConnected())
-        {
-            Log.v(TAG,"Removing geofences,disconnecting...");
-            mFencer.removeGeofences(mClient,pIntent);
+        Log.v(TAG, "Destroying activity,GoogleApiClient...");
+        if (mClient.isConnected()) {
+            Log.v(TAG, "Removing geofences,disconnecting...");
+            mFencer.removeGeofences(mClient, pIntent);
             mClient.disconnect();
         }
 
-        mClient=null;
+        mClient = null;
     }
 }

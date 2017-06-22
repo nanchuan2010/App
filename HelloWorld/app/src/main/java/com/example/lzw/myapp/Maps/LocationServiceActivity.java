@@ -24,7 +24,7 @@ public class LocationServiceActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.maps_where_am_i);
+        setContentView(R.layout.maps_location_activity);
 
         Button btn=(Button)findViewById(R.id.btnAddMarker);
         btn.setVisibility(View.GONE);

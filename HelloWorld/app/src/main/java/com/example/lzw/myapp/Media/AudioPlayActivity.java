@@ -6,15 +6,12 @@ import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.app.Activity;
-import android.os.Environment;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.example.lzw.myapp.R;
-
-import java.util.zip.Inflater;
 
 public class AudioPlayActivity extends Activity implements MediaPlayer.OnPreparedListener {
 
@@ -28,7 +25,7 @@ public class AudioPlayActivity extends Activity implements MediaPlayer.OnPrepare
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_audio_play);
+        setContentView(R.layout.media_audio_play);
     }
 
     public void doClick(View view)
@@ -134,7 +131,7 @@ public class AudioPlayActivity extends Activity implements MediaPlayer.OnPrepare
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
         MenuInflater inflater=getMenuInflater();
-        inflater.inflate(R.menu.async_task_menu,menu);
+        inflater.inflate(R.menu.media_menu,menu);
         return true;
     }
 
@@ -143,14 +140,14 @@ public class AudioPlayActivity extends Activity implements MediaPlayer.OnPrepare
         Intent intent=null;
         switch (item.getItemId())
         {
-           /* case R.id.menu_test_async2:
+            case R.id.menu_sound_pool:
                 intent=new Intent(this,SoundPoolActivity.class);
                 this.startActivity(intent);
                 break;
-            case R.id.menu_test_async3:
+            case R.id.menu_video_play:
                 intent=new Intent(this,VideoPlayActivity.class);
                 this.startActivity(intent);
-                break;*/
+                break;
         }
 
         return true;

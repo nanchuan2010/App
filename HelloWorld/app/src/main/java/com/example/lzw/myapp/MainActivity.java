@@ -17,7 +17,8 @@ import com.example.lzw.myapp.Controls.ControlsDemoActivity;
 import com.example.lzw.myapp.Dialogs.DialogActivity;
 import com.example.lzw.myapp.Fragments.FragmentActivity;
 import com.example.lzw.myapp.Handlers.HandlersDriverActivity;
-import com.example.lzw.myapp.Maps.WhereAmIActivity;
+import com.example.lzw.myapp.Maps.MapLocationActivity;
+import com.example.lzw.myapp.Media.AudioPlayActivity;
 import com.example.lzw.myapp.Preferences.MainPreferenceActivity;
 import com.example.lzw.myapp.Services.GetAndPostActivity;
 
@@ -49,7 +50,8 @@ public class MainActivity extends Activity {
         map.put("Broadcast",new BroadcastActivity());
         map.put("Alarm Manager",new AlarmManagerDriverActivity());
         map.put("Animation",new FrameAnimationActivity());
-        map.put("Maps",new WhereAmIActivity());
+        map.put("Maps",new MapLocationActivity());
+        map.put("Media",new AudioPlayActivity());
 
         //String[] listItems=new String[]{"Architecture","AlarmManager","Animation","Loader","Contacts"};
         String[] listItems=new String[map.size()];

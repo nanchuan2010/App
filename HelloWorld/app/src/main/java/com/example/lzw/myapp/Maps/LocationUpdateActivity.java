@@ -1,7 +1,6 @@
 package com.example.lzw.myapp.Maps;
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Location;
@@ -31,7 +30,7 @@ public class LocationUpdateActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.maps_where_am_i);
+        setContentView(R.layout.maps_location_activity);
 
         Button btn=(Button)findViewById(R.id.btnAddMarker);
         btn.setVisibility(View.GONE);
@@ -84,6 +83,14 @@ public class LocationUpdateActivity extends FragmentActivity {
 
             return;
         }
+
+/*        Criteria crite=new Criteria();
+        crite.setAccuracy(Criteria.ACCURACY_LOW);
+        crite.setPowerRequirement(Criteria.POWER_LOW);
+        String provider=locMgr.getBestProvider(crite,true);
+
+        locMgr.requestLocationUpdates(provider, 0, 0, locListener);*/
+
         locMgr.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locListener);
     }
 

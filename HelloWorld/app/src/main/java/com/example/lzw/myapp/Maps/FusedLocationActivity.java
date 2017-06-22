@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.content.pm.PackageManager;
+import android.location.Criteria;
 import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
@@ -64,7 +65,7 @@ public class FusedLocationActivity extends FragmentActivity
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.maps_fused_location);
-        locReq = LocationRequest.create().setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY).setInterval(10000).setFastestInterval(5000);
+        locReq = LocationRequest.create().setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY).setInterval(10000).setFastestInterval(5000);
         client = new GoogleApiClient.Builder(this, this, this).addApi(LocationServices.API).build();
         modeStr = (TextView) findViewById(R.id.mode);
         priorityStr = (TextView) findViewById(R.id.priority);
@@ -244,6 +245,9 @@ public class FusedLocationActivity extends FragmentActivity
                 locReq.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
                 priorityStr.setText("Current priority is HIGH_ACCURACY");
                 break;
+            case R.id.btnLocationSetting:
+                startActivityForResult(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS), LOCATION_SETTINGS_REQUEST);
+                return;
         }
         if (client.isConnected()) {
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
@@ -254,7 +258,5 @@ public class FusedLocationActivity extends FragmentActivity
 
             locator.requestLocationUpdates(client, locReq, this);
         }
-
-        startActivityForResult(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS), LOCATION_SETTINGS_REQUEST);
     }
 }

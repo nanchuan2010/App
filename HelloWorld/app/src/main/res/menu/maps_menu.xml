@@ -4,5 +4,6 @@
         <item android:id="@+id/menu_location_service" android:title="Location Service"/>
         <item android:id="@+id/menu_location_update" android:title="Location Update"/>
         <item android:id="@+id/menu_fused_location"  android:title="Fused Location" />
+        <item android:id="@+id/menu_geofencing_api"  android:title="Geofencing API" />
     </group>
 </menu>

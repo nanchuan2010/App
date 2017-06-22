@@ -31,7 +31,7 @@ public class SoundPoolActivity extends Activity implements SoundPool.OnLoadCompl
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sound_pool);
+        setContentView(R.layout.media_sound_pool);
     }
 
     @Override

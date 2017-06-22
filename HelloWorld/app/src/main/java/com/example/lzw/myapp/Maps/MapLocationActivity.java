@@ -7,7 +7,6 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -27,7 +26,7 @@ import com.google.android.gms.maps.model.LatLng;
 import java.io.IOException;
 import java.util.List;
 
-public class WhereAmIActivity extends FragmentActivity {
+public class MapLocationActivity extends FragmentActivity {
 
     private static final String MAPFRAGTAG = "MAPFRAGTAG";
     private MyMapFragment myMapFrag;
@@ -36,7 +35,7 @@ public class WhereAmIActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.maps_where_am_i);
+        setContentView(R.layout.maps_location_activity);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         if ((myMapFrag = (MyMapFragment) getSupportFragmentManager().findFragmentByTag(MAPFRAGTAG)) == null) {
             myMapFrag = MyMapFragment.newInstance();
@@ -112,6 +111,10 @@ public class WhereAmIActivity extends FragmentActivity {
                 break;
             case R.id.menu_fused_location:
                 intent.setClass(this,FusedLocationActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.menu_geofencing_api:
+                intent.setClass(this,GeofencingApiActivity.class);
                 startActivity(intent);
                 break;
         }
