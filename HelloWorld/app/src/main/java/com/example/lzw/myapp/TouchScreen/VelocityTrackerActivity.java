@@ -17,7 +17,7 @@ public class VelocityTrackerActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_boolean_button);
+        setContentView(R.layout.touch_boolean_button);
     }
 
     private VelocityTracker vTracker=null;

@@ -25,7 +25,7 @@ public class DropZone extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle icicle) {
-        View v=inflater.inflate(R.layout.dropzone,container,false);
+        View v=inflater.inflate(R.layout.drag_drop_zone,container,false);
         dropMessage=(TextView)v.findViewById(R.id.dropmessage);
         dropTarget=(View)v.findViewById(R.id.droptarget);
         dropTarget.setOnDragListener(new View.OnDragListener(){
@@ -84,7 +84,7 @@ public class DropZone extends Fragment {
                         }
                         break;
                     default:
-                        Log.v(DROPTAG," other action in dropzone: "+action);
+                        Log.v(DROPTAG," other action in drag_drop_zone: "+action);
                         result=false;
                 }
                 return result;

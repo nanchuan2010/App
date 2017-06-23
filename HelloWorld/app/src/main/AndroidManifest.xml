@@ -208,24 +208,33 @@
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyCUoYoYO8MStymSxJ6jGDzBpcD1k0pnJDE" />
-        <activity android:name=".Maps.MapLocationActivity"
+
+        <activity
+            android:name=".Maps.MapLocationActivity"
             android:label="Maps" />
-        <activity android:name=".Maps.LocationServiceActivity"
+        <activity
+            android:name=".Maps.LocationServiceActivity"
             android:label="Location Service" />
-        <activity android:name=".Maps.LocationUpdateActivity"
-            android:label="Location Update"/>
-        <activity android:name=".Maps.FusedLocationActivity"
+        <activity
+            android:name=".Maps.LocationUpdateActivity"
+            android:label="Location Update" />
+        <activity
+            android:name=".Maps.FusedLocationActivity"
             android:label="Fused Location" />
-        <activity android:name=".Maps.GeofencingApiActivity"
+        <activity
+            android:name=".Maps.GeofencingApiActivity"
             android:label="Geofencing API" />
 
         <!--Media-->
-        <activity android:name=".Media.AudioPlayActivity"
-            android:label="Audio Play"/>
-        <activity android:name=".Media.SoundPoolActivity"
-            android:label="Sound Pool"/>
-        <activity android:name=".Media.VideoPlayActivity"
-            android:label="Video Play"/>
+        <activity
+            android:name=".Media.AudioPlayActivity"
+            android:label="Audio Play" />
+        <activity
+            android:name=".Media.SoundPoolActivity"
+            android:label="Sound Pool" />
+        <activity
+            android:name=".Media.VideoPlayActivity"
+            android:label="Video Play" />
 
         <!--Home Screen Widget-->
         <receiver android:name=".HomeScreenWidget.BDayWidgetProvider">
@@ -244,6 +253,25 @@
             </intent-filter>
         </activity>
 
+        <!--Touch Screen-->
+        <activity
+            android:name=".TouchScreen.TouchScreenActivity"
+            android:label="@string/title_activity_boolean_button"></activity>
+        <activity
+            android:name=".TouchScreen.VelocityTrackerActivity"
+            android:label="Velocity Tracker" />
+        <activity
+            android:name=".TouchScreen.MultiTouchActivity"
+            android:label="@string/title_activity_multi_touch"></activity>
+        <activity
+            android:name=".TouchScreen.ScaleGestureActivity"
+            android:label="@string/title_activity_scale_gesture"></activity>
+
+        <!--Drag And Drop-->
+        <activity android:name=".DragAndDrop.TouchDragActivity"
+            android:label="Touch Drag"/>
+        <activity android:name=".DragAndDrop.DragDropFragActivity"
+            android:label="Drag &amp; Drop"/>
 
         <!--        <activity
                     android:name=".SearchResultsActivity"
@@ -281,37 +309,6 @@
         -->
 
 
-        <!--
-            <activity
-            android:name=".Media.AudioPlayActivity"
-            android:label="@string/title_activity_audio_play"></activity>
-        -->
-        <!--        <activity
-                    android:name=".Media.SoundPoolActivity"
-                    android:label="@string/title_activity_sound_pool" />
-                <activity
-                    android:name=".Media.VideoPlayActivity"
-                    android:label="@string/title_activity_video_play" />-->
-        <!--
-            <activity
-            android:name=".HomeScreenWidget.ConfigureBDayWidgetActivity"
-            android:label="@string/title_activity_configure_bday_widget"></activity>
-        -->
-        <!--
-            <activity
-            android:name=".TouchScreen.BooleanButtonActivity"
-            android:label="@string/title_activity_boolean_button"></activity>
-        -->
-        <!--
-            <activity
-            android:name=".TouchScreen.MultiTouchActivity"
-            android:label="@string/title_activity_multi_touch"></activity>
-        -->
-        <!--
-            <activity
-            android:name=".TouchScreen.ScaleGestureActivity"
-            android:label="@string/title_activity_scale_gesture"></activity>
-        -->
         <!--
             <activity
             android:name=".Sensor.SensorListActivity"

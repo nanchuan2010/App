@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/groupTouch">
+        <item android:id="@+id/menu_velocity_tracker" android:title="Velocity Tracker"/>
+        <item android:id="@+id/menu_multi_touch" android:title="Multi Touch"/>
+        <item android:id="@+id/menu_scale_gesture" android:title="Scale Gesture"/>
+    </group>
+</menu>

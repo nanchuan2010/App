@@ -12,34 +12,34 @@ import com.example.lzw.myapp.R;
 
 
 public class ScaleGestureActivity extends Activity {
-    private static final String TAG="ScaleDetector";
+    private static final String TAG = "ScaleDetector";
     private ImageView image;
     private ScaleGestureDetector mScaleDetector;
-    private float mScaleFactor=1f;
-    private Matrix mMatrix=new Matrix();
+    private float mScaleFactor = 1f;
+    private Matrix mMatrix = new Matrix();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_scale_gesture);
-        image=(ImageView)findViewById(R.id.image);
-        mScaleDetector=new ScaleGestureDetector(this,new ScaleListener());
+        setContentView(R.layout.touch_scale_gesture);
+        image = (ImageView) findViewById(R.id.image);
+        mScaleDetector = new ScaleGestureDetector(this, new ScaleListener());
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        Log.v(TAG,"in onTouchEvent");
+        Log.v(TAG, "in onTouchEvent");
         mScaleDetector.onTouchEvent(event);
         return true;
     }
 
-    private class ScaleListener extends ScaleGestureDetector.SimpleOnScaleGestureListener{
+    private class ScaleListener extends ScaleGestureDetector.SimpleOnScaleGestureListener {
         @Override
         public boolean onScale(ScaleGestureDetector detector) {
-            mScaleFactor*=detector.getScaleFactor();
-            mScaleFactor=Math.max(0.1f,Math.min(mScaleFactor,5.0f));
-            Log.v(TAG,"in onScale, scale factor="+mScaleFactor);
-            mMatrix.setScale(mScaleFactor,mScaleFactor);
+            mScaleFactor *= detector.getScaleFactor();
+            mScaleFactor = Math.max(0.1f, Math.min(mScaleFactor, 5.0f));
+            Log.v(TAG, "in onScale, scale factor=" + mScaleFactor);
+            mMatrix.setScale(mScaleFactor, mScaleFactor);
             image.setImageMatrix(mMatrix);
             image.invalidate();
             return true;

@@ -12,6 +12,6 @@ public class DragDropFragActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_drag_drop_frag);
+        setContentView(R.layout.drag_and_drop_frag);
     }
 }

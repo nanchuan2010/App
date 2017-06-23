@@ -1,8 +1,12 @@
 package com.example.lzw.myapp.TouchScreen;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -11,12 +15,12 @@ import android.widget.RelativeLayout;
 import com.example.lzw.myapp.R;
 
 
-public class BooleanButtonActivity extends Activity implements View.OnTouchListener {
+public class TouchScreenActivity extends Activity implements View.OnTouchListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_boolean_button);
+        setContentView(R.layout.touch_boolean_button);
 
         RelativeLayout layout1=(RelativeLayout)findViewById(R.id.layout1);
         layout1.setOnTouchListener(this);
@@ -77,5 +81,34 @@ public class BooleanButtonActivity extends Activity implements View.OnTouchListe
         result.append(event.getEventTime()-event.getDownTime());
         result.append(" ms \n");
         return  result.toString();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.touch_menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent=new Intent();
+        switch (item.getItemId())
+        {
+            case R.id.menu_velocity_tracker:
+                intent.setClass(this,VelocityTrackerActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.menu_multi_touch:
+                intent.setClass(this,MultiTouchActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.menu_scale_gesture:
+                intent.setClass(this,ScaleGestureActivity.class);
+                startActivity(intent);
+                break;
+        }
+        return true;
     }
 }
