@@ -20,7 +20,7 @@ public abstract class MonitoredDebugActivity extends BaseActivity implements IRe
     private boolean m_retainState=false;
 
     protected MonitoredDebugActivity(int inMenuId, String intag) {
-        super(R.layout.activity_debug_layout,R.menu.test_book_persistence_menu, intag);
+        super(R.layout.provider_debug_layout,R.menu.provider_book_persistence, intag);
         tag=intag;
     }
 

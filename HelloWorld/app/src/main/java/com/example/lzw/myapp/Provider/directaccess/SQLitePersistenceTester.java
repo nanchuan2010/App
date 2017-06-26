@@ -2,8 +2,8 @@ package com.example.lzw.myapp.Provider.directaccess;
 
 import android.content.Context;
 
+import com.example.lzw.myapp.BaseListener;
 import com.example.lzw.myapp.IReportBack;
-import com.example.lzw.myapp.Provider.BaseTester;
 import com.example.lzw.myapp.Provider.services.Book;
 import com.example.lzw.myapp.Provider.services.IBookPS;
 import com.example.lzw.myapp.Provider.services.Services;
@@ -14,7 +14,7 @@ import java.util.List;
  * Created by Administrator on 2017/6/9.
  */
 
-public class SQLitePersistenceTester extends BaseTester {
+public class SQLitePersistenceTester extends BaseListener {
 
     private static String tag="SQLitePersistenceTester";
 

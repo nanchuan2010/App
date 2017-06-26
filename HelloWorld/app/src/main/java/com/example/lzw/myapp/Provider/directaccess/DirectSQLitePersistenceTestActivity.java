@@ -18,13 +18,18 @@ public class DirectSQLitePersistenceTestActivity  extends MonitoredDebugActivity
 
     public DirectSQLitePersistenceTestActivity()
     {
-        super(R.menu.test_book_persistence_menu,tag);
+        super(R.menu.provider_book_persistence,tag);
         this.retainState();
         sqLitePersistenceTester=new SQLitePersistenceTester(this,this);
     }
 
     @Override
-    public boolean onMenuItemSelected(int featureId, MenuItem item) {
+    public void reportTransient(String tag, String message) {
+
+    }
+
+    @Override
+    protected boolean onMenuItemSelected(MenuItem item) {
         Log.d(tag,item.getTitle().toString());
         if(item.getItemId()==R.id.menu_add_book)
         {
@@ -42,15 +47,5 @@ public class DirectSQLitePersistenceTestActivity  extends MonitoredDebugActivity
             return true;
         }
         return true;
-    }
-
-    @Override
-    public void reportTransient(String tag, String message) {
-
-    }
-
-    @Override
-    protected boolean onMenuItemSelected(MenuItem item) {
-        return false;
     }
 }

@@ -9,10 +9,10 @@ import com.example.lzw.myapp.R;
  * Created by Administrator on 2017/6/9.
  */
 
-public class TestPersistenceDriverActivity extends BaseActivity {
-    public static String tag="TestPersistenceDriverActivity";
+public class PersistenceDriverActivity extends BaseActivity {
+    public static String tag="PersistenceDriverActivity";
 
-    public TestPersistenceDriverActivity()
+    public PersistenceDriverActivity()
     {
         super(R.layout.antivity_persistence_driver,-1,tag);
     }

@@ -13,15 +13,20 @@ import com.example.lzw.myapp.Animation.FrameAnimationActivity;
 import com.example.lzw.myapp.Architecture.CalculatorActivity;
 import com.example.lzw.myapp.AsyncTask.TestAsyncTaskDriverActivity;
 import com.example.lzw.myapp.Broadcast.BroadcastActivity;
+import com.example.lzw.myapp.Contacts.TestContactsDriverActivity;
 import com.example.lzw.myapp.Controls.ControlsDemoActivity;
 import com.example.lzw.myapp.Dialogs.DialogActivity;
 import com.example.lzw.myapp.DragAndDrop.DragDropFragActivity;
 import com.example.lzw.myapp.DragAndDrop.TouchDragActivity;
 import com.example.lzw.myapp.Fragments.FragmentActivity;
 import com.example.lzw.myapp.Handlers.HandlersDriverActivity;
+import com.example.lzw.myapp.Loader.LoadersActivity;
 import com.example.lzw.myapp.Maps.MapLocationActivity;
 import com.example.lzw.myapp.Media.AudioPlayActivity;
 import com.example.lzw.myapp.Preferences.MainPreferenceActivity;
+import com.example.lzw.myapp.Provider.PersistenceDriverActivity;
+import com.example.lzw.myapp.Provider.directaccess.DirectSQLitePersistenceTestActivity;
+import com.example.lzw.myapp.Sensor.SensorListActivity;
 import com.example.lzw.myapp.Services.GetAndPostActivity;
 import com.example.lzw.myapp.TouchScreen.TouchScreenActivity;
 
@@ -57,6 +62,10 @@ public class MainActivity extends Activity {
         map.put("Media",new AudioPlayActivity());
         map.put("Touch Screen",new TouchScreenActivity());
         map.put("Drag & Drop",new TouchDragActivity());
+        map.put("Sensors",new SensorListActivity());
+        map.put("Persistence",new PersistenceDriverActivity());
+        map.put("Loaders",new LoadersActivity());
+        map.put("Contacts",new TestContactsDriverActivity());
 
         //String[] listItems=new String[]{"Architecture","AlarmManager","Animation","Loader","Contacts"};
         String[] listItems=new String[map.size()];

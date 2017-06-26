@@ -25,7 +25,7 @@ public class GravitySensorActivity extends Activity implements SensorEventListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sensor_list);
+        setContentView(R.layout.sensors_list);
 
         mgr=(SensorManager)this.getSystemService(SENSOR_SERVICE);
         accelerometer=mgr.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);

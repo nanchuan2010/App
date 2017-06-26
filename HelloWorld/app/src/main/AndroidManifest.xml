@@ -3,10 +3,9 @@
     package="com.example.lzw.myapp">
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.WRITE_PROFILE" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <!--Maps-->
@@ -19,6 +18,11 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!--Contacts-->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
 
     <uses-configuration android:reqTouchScreen="finger" />
 
@@ -268,10 +272,49 @@
             android:label="@string/title_activity_scale_gesture"></activity>
 
         <!--Drag And Drop-->
-        <activity android:name=".DragAndDrop.TouchDragActivity"
-            android:label="Touch Drag"/>
-        <activity android:name=".DragAndDrop.DragDropFragActivity"
-            android:label="Drag &amp; Drop"/>
+        <activity
+            android:name=".DragAndDrop.TouchDragActivity"
+            android:label="Touch Drag" />
+        <activity
+            android:name=".DragAndDrop.DragDropFragActivity"
+            android:label="Drag &amp; Drop" />
+
+        <!--Sensors-->
+        <activity
+            android:name=".Sensor.SensorListActivity"
+            android:label="@string/title_activity_sensor_list"></activity>
+        <activity
+            android:name=".Sensor.LightSensorActivity"
+            android:label="@string/title_activity_light_sensor"></activity>
+        <activity
+            android:name=".Sensor.GravitySensorActivity"
+            android:label="@string/title_activity_gravity_sensor"></activity>
+
+        <!--Providers-->
+        <activity
+            android:name=".Provider.PersistenceDriverActivity"
+            android:label="Persistence" />
+        <activity
+            android:name=".Provider.directaccess.DirectSQLitePersistenceTestActivity"
+            android:label="Direct Access" />
+        <activity
+            android:name=".Provider.ContentProviderTestActivity"
+            android:label="Content Provider" />
+
+        <provider
+            android:name=".Provider.BookProvider"
+            android:authorities="com.example.lzw.myapp.Provider.BookProvider" />
+
+        <!--Loaders-->
+        <activity
+            android:name=".Loader.LoadersActivity"
+            android:label="@string/title_activity_test_loaders"></activity>
+
+        <!--Contacts-->
+        <activity
+            android:name=".Contacts.TestContactsDriverActivity"
+            android:label="@string/title_activity_test_contacts_driver"></activity>
+
 
         <!--        <activity
                     android:name=".SearchResultsActivity"
@@ -284,15 +327,6 @@
                         android:name="android.app.searchable"
                         android:resource="@xml/searchable" />
                 </activity>
-
-
-
-
-
-
-
-
-
 
 -->
 
@@ -308,42 +342,6 @@
         </activity>
         -->
 
-
-        <!--
-            <activity
-            android:name=".Sensor.SensorListActivity"
-            android:label="@string/title_activity_sensor_list"></activity>
-        -->
-        <!--
-            <activity
-            android:name=".Sensor.LightSensorActivity"
-            android:label="@string/title_activity_light_sensor"></activity>
-        -->
-        <!--
-            <activity
-            android:name=".Sensor.GravitySensorActivity"
-            android:label="@string/title_activity_gravity_sensor"></activity>
-        -->
-        <!--        <activity
-                    android:name=".Provider.ContentProviderTestActivity"
-                    android:label="ContentProviderTestActivity" />
-                <activity
-                    android:name=".Provider.directaccess.DirectSQLitePersistenceTestActivity"
-                    android:label="@string/title_activity_gravity_sensor" />
-
-                <provider
-                    android:name=".Provider.BookProvider"
-                    android:authorities="com.example.lzw.myapp.Provider.BookProvider" />-->
-        <!--
-        <activity
-            android:name=".Loader.TestLoadersActivity"
-            android:label="@string/title_activity_test_loaders"></activity>
-        -->
-        <!--
-            <activity
-            android:name=".Contacts.TestContactsDriverActivity"
-            android:label="@string/title_activity_test_contacts_driver"></activity>
-        -->
 
     </application>
 

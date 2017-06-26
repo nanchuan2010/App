@@ -13,7 +13,7 @@ import com.example.lzw.myapp.*;
 /**
  * Created by LZW on 2017/06/09.
  */
-public class ProviderTester extends BaseTester {
+public class ProviderTester extends BaseListener {
 
     private static String tag="Provider Tester";
 

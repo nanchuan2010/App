@@ -11,9 +11,6 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.lzw.myapp.IReportBack;
-import com.example.lzw.myapp.R;
-
 /**
  * Created by Administrator on 2017/6/11.
  */
@@ -34,7 +31,7 @@ public abstract class DebugActivity extends Activity implements IReportBack {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_debug_layout);
+        setContentView(R.layout.provider_debug_layout);
         TextView tv=this.getTextView();
         tv.setMovementMethod(new ScrollingMovementMethod());
     }

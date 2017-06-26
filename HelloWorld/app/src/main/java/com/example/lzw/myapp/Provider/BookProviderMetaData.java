@@ -7,7 +7,7 @@ import android.provider.BaseColumns;
  * Created by LZW on 2017/06/09.
  */
 public class BookProviderMetaData {
-    public static final String AUTHORITY="com.frm_layout_activity.lzw.myapp.Provider.BookProvider";
+    public static final String AUTHORITY="com.example.lzw.myapp.Provider.BookProvider";
 
     public static final String DATABASE_NAME="book.db";
     public static final int DATABASE_VERSION=1;

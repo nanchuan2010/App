@@ -16,7 +16,7 @@ public class ContentProviderTestActivity extends MonitoredDebugActivity implemen
 
     public ContentProviderTestActivity()
     {
-        super(R.menu.test_book_persistence_menu,tag);
+        super(R.menu.provider_book_persistence,tag);
         this.retainState();
         providerTester=new ProviderTester(this,this);
     }

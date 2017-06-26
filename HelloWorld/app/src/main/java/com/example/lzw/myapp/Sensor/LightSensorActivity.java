@@ -1,11 +1,15 @@
 package com.example.lzw.myapp.Sensor;
 
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.app.Activity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.example.lzw.myapp.R;
@@ -21,7 +25,7 @@ public class LightSensorActivity extends Activity implements SensorEventListener
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sensor_list);
+        setContentView(R.layout.sensors_list);
 
         mgr=(SensorManager)this.getSystemService(SENSOR_SERVICE);
         light=mgr.getDefaultSensor(Sensor.TYPE_LIGHT);
@@ -53,4 +57,5 @@ public class LightSensorActivity extends Activity implements SensorEventListener
         text.setText(msg);
         text.invalidate();
     }
+
 }
