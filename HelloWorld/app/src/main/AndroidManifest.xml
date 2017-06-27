@@ -3,9 +3,6 @@
     package="com.example.lzw.myapp">
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
-    <uses-permission android:name="android.permission.READ_PROFILE" />
-    <uses-permission android:name="android.permission.WRITE_PROFILE" />
-
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <!--Maps-->
@@ -22,7 +19,8 @@
     <!--Contacts-->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.WRITE_PROFILE" />
 
     <uses-configuration android:reqTouchScreen="finger" />
 

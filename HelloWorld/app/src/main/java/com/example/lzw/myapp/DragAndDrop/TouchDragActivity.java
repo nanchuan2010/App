@@ -21,7 +21,7 @@ public class TouchDragActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_touch_drag);
+        setContentView(R.layout.drag_touch_drag);
 
         counterLayout=(LinearLayout)findViewById(R.id.counters);
     }
